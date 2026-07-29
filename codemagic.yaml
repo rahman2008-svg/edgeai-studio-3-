@@ -6,18 +6,18 @@ workflows:
       java: 21
 
     scripts:
-      - name: Change directory
-        script: cd Android/src
-
       - name: Make gradlew executable
         script: |
-          cd Android/src
           chmod +x gradlew
 
-      - name: Build APK
+      - name: Build Debug APK
         script: |
-          cd Android/src
           ./gradlew assembleDebug
 
     artifacts:
-      - Android/src/app/build/outputs/**/*.apk
+      - app/build/outputs/**/*.apk
+
+    cache:
+      cache_paths:
+        - ~/.gradle/caches
+        - ~/.gradle/wrapper
