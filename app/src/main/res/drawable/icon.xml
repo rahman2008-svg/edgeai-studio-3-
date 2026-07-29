@@ -1,0 +1,46 @@
+<!--
+ Copyright 2026 Google LLC
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:pathData="M54,14m-40,0a40,40 0 1,1 80,0a40,40 0 1,1 -80,0">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="14"
+                android:startY="14"
+                android:endX="94"
+                android:endY="94"
+                android:type="linear">
+                <item android:color="#FF00F0FF" android:offset="0.0"/>
+                <item android:color="#FF7C3AED" android:offset="1.0"/>
+            </gradient>
+        </aapt:attr>
+    </path>
+    <path
+        android:pathData="M34,34 L46,34 L74,74 L62,74 Z"
+        android:fillColor="#FFFFFFFF"/>
+    <path
+        android:pathData="M34,34 L46,34 L46,74 L34,74 Z"
+        android:fillColor="#FF2563EB"/>
+    <path
+        android:pathData="M62,34 L74,34 L74,74 L62,74 Z"
+        android:fillColor="#FF06B6D4"/>
+</vector>

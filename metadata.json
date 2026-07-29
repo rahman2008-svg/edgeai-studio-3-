@@ -1,0 +1,6 @@
+{
+  "name": "Nexora AI",
+  "description": "Premium Next-Gen AI Hub with Chat, Vision, Voice, Code, Documents, Translate & On-Device Models.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
