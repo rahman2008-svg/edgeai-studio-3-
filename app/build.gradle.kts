@@ -29,7 +29,7 @@ plugins {
 
 android {
   namespace = "com.google.ai.edge.gallery"
-  compileSdk = 35
+  compileSdk = 36
 
   defaultConfig {
     applicationId = "com.aistudio.nexoraai.app"
