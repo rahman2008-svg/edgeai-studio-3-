@@ -88,35 +88,17 @@ import com.google.ai.edge.gallery.ui.modelmanager.ModelInitializationStatusType
 import com.google.ai.edge.gallery.ui.modelmanager.ModelManager
 import com.google.ai.edge.gallery.ui.modelmanager.ModelManagerViewModel
 import com.google.ai.edge.gallery.ui.notifications.NotificationsScreen
-import com.google.ai.edge.gallery.ui.nexora.SplashScreen
-import com.google.ai.edge.gallery.ui.nexora.OnboardingScreen
-import com.google.ai.edge.gallery.ui.nexora.ProfileScreen
-import com.google.ai.edge.gallery.ui.nexora.SettingsScreen
-import com.google.ai.edge.gallery.ui.nexora.HistoryScreen
-import com.google.ai.edge.gallery.ui.nexora.AiStudioScreen
-import com.google.ai.edge.gallery.ui.nexora.AiDocumentScreen
-import com.google.ai.edge.gallery.ui.nexora.AiTranslateScreen
-import com.google.ai.edge.gallery.ui.nexora.AboutDeveloperScreen
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 private const val TAG = "AGGalleryNavGraph"
-private const val ROUTE_SPLASH = "splash"
-private const val ROUTE_ONBOARDING = "onboarding"
 private const val ROUTE_HOMESCREEN = "homepage"
 private const val ROUTE_MODEL_LIST = "model_list"
 private const val ROUTE_MODEL = "route_model"
 private const val ROUTE_BENCHMARK = "benchmark"
 private const val ROUTE_MODEL_MANAGER = "model_manager"
 private const val ROUTE_NOTIFICATIONS = "notifications"
-private const val ROUTE_PROFILE = "profile"
-private const val ROUTE_SETTINGS = "settings"
-private const val ROUTE_HISTORY = "history"
-private const val ROUTE_STUDIO = "ai_studio"
-private const val ROUTE_DOCUMENTS = "ai_documents"
-private const val ROUTE_TRANSLATE = "ai_translate"
-private const val ROUTE_ABOUT = "about_developer"
 private const val ENTER_ANIMATION_DURATION_MS = 500
 private val ENTER_ANIMATION_EASING = EaseOutExpo
 private const val ENTER_ANIMATION_DELAY_MS = 100
@@ -176,7 +158,6 @@ fun GalleryNavHost(
   var pickedTask by remember { mutableStateOf<Task?>(null) }
   var enableHomeScreenAnimation by remember { mutableStateOf(true) }
   var enableModelListAnimation by remember { mutableStateOf(true) }
-  var lastNavigatedModelName = remember { "" }
   val modelManagerUiState by modelManagerViewModel.uiState.collectAsState()
 
   // Track whether app is in foreground.
@@ -231,12 +212,6 @@ fun GalleryNavHost(
             },
             onModelsClicked = { navController.navigate(ROUTE_MODEL_MANAGER) },
             onNotificationsClicked = { navController.navigate(ROUTE_NOTIFICATIONS) },
-            onNavigateProfile = { navController.navigate(ROUTE_PROFILE) },
-            onNavigateSettings = { navController.navigate(ROUTE_SETTINGS) },
-            onNavigateHistory = { navController.navigate(ROUTE_HISTORY) },
-            onNavigateStudio = { navController.navigate(ROUTE_STUDIO) },
-            onNavigateDocuments = { navController.navigate(ROUTE_DOCUMENTS) },
-            onNavigateTranslate = { navController.navigate(ROUTE_TRANSLATE) },
             gm4 = true,
           )
         }
@@ -341,10 +316,7 @@ fun GalleryNavHost(
       val context = LocalContext.current
 
       modelManagerViewModel.getModelByName(name = modelName)?.let { initialModel ->
-        if (lastNavigatedModelName != modelName) {
-          modelManagerViewModel.selectModel(initialModel)
-          lastNavigatedModelName = modelName
-        }
+        LaunchedEffect(modelName) { modelManagerViewModel.selectModel(initialModel) }
 
         val customTask = modelManagerViewModel.getCustomTaskByTaskId(id = taskId)
         if (customTask != null) {
@@ -355,7 +327,6 @@ fun GalleryNavHost(
                   modelManagerViewModel = modelManagerViewModel,
                   onNavUp = {
                     enableModelListAnimation = false
-                    lastNavigatedModelName = ""
                     navController.navigateUp()
                   },
                   initialQuery = queryParam,
@@ -373,7 +344,6 @@ fun GalleryNavHost(
                   customNavigateUpCallback?.invoke()
                 } else {
                   enableModelListAnimation = false
-                  lastNavigatedModelName = ""
                   navController.navigateUp()
 
                   // clean up all models.
@@ -481,73 +451,6 @@ fun GalleryNavHost(
           },
         )
       }
-    }
-
-    // Splash page
-    composable(route = ROUTE_SPLASH) {
-      SplashScreen(
-        onSplashFinished = {
-          navController.navigate(ROUTE_HOMESCREEN) {
-            popUpTo(ROUTE_SPLASH) { inclusive = true }
-          }
-        }
-      )
-    }
-
-    // Onboarding page
-    composable(route = ROUTE_ONBOARDING) {
-      OnboardingScreen(
-        onFinishOnboarding = {
-          navController.navigate(ROUTE_HOMESCREEN) {
-            popUpTo(ROUTE_ONBOARDING) { inclusive = true }
-          }
-        }
-      )
-    }
-
-    // Profile page
-    composable(route = ROUTE_PROFILE) {
-      ProfileScreen(
-        onNavigateBack = { navController.navigateUp() },
-        onNavigateSettings = { navController.navigate(ROUTE_SETTINGS) },
-        onNavigateAbout = { navController.navigate(ROUTE_ABOUT) }
-      )
-    }
-
-    // Settings page
-    composable(route = ROUTE_SETTINGS) {
-      SettingsScreen(
-        onNavigateBack = { navController.navigateUp() },
-        onNavigateAbout = { navController.navigate(ROUTE_ABOUT) }
-      )
-    }
-
-    // History page
-    composable(route = ROUTE_HISTORY) {
-      HistoryScreen(
-        onNavigateBack = { navController.navigateUp() },
-        onItemClick = { _ -> navController.navigateUp() }
-      )
-    }
-
-    // AI Studio page
-    composable(route = ROUTE_STUDIO) {
-      AiStudioScreen(onNavigateBack = { navController.navigateUp() })
-    }
-
-    // AI Document page
-    composable(route = ROUTE_DOCUMENTS) {
-      AiDocumentScreen(onNavigateBack = { navController.navigateUp() })
-    }
-
-    // AI Translate page
-    composable(route = ROUTE_TRANSLATE) {
-      AiTranslateScreen(onNavigateBack = { navController.navigateUp() })
-    }
-
-    // About Developer page
-    composable(route = ROUTE_ABOUT) {
-      AboutDeveloperScreen(onNavigateBack = { navController.navigateUp() })
     }
   }
 

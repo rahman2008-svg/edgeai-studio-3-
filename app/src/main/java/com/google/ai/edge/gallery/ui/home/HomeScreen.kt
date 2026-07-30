@@ -101,6 +101,7 @@ import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.semantics.clearAndSetSemantics
@@ -131,33 +132,6 @@ import com.google.ai.edge.gallery.ui.common.tos.TosViewModel
 import com.google.ai.edge.gallery.ui.modelmanager.ModelManagerViewModel
 import com.google.ai.edge.gallery.ui.theme.customColors
 import com.google.ai.edge.gallery.ui.theme.homePageTitleStyle
-import androidx.compose.foundation.border
-import com.google.ai.edge.gallery.ui.nexora.NexoraGlassCard
-import androidx.compose.material.icons.rounded.Article
-import androidx.compose.material.icons.rounded.AutoAwesome
-import androidx.compose.material.icons.rounded.BarChart
-import androidx.compose.material.icons.rounded.Bolt
-import androidx.compose.material.icons.rounded.Build
-import androidx.compose.material.icons.rounded.ChatBubbleOutline
-import androidx.compose.material.icons.rounded.ChevronRight
-import androidx.compose.material.icons.rounded.Code
-import androidx.compose.material.icons.rounded.Description
-import androidx.compose.material.icons.rounded.Download
-import androidx.compose.material.icons.rounded.Favorite
-import androidx.compose.material.icons.rounded.GraphicEq
-import androidx.compose.material.icons.rounded.History
-import androidx.compose.material.icons.rounded.Image
-import androidx.compose.material.icons.rounded.Lightbulb
-import androidx.compose.material.icons.rounded.Newspaper
-import androidx.compose.material.icons.rounded.Person
-import androidx.compose.material.icons.rounded.Psychology
-import androidx.compose.material.icons.rounded.Search
-import androidx.compose.material.icons.rounded.Star
-import androidx.compose.material.icons.rounded.Translate
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.AssistChip
-import androidx.compose.foundation.lazy.items
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -191,12 +165,6 @@ fun HomeScreen(
   navigateToTaskScreen: (Task) -> Unit,
   onModelsClicked: () -> Unit,
   onNotificationsClicked: () -> Unit,
-  onNavigateProfile: () -> Unit,
-  onNavigateSettings: () -> Unit,
-  onNavigateHistory: () -> Unit,
-  onNavigateStudio: () -> Unit,
-  onNavigateDocuments: () -> Unit,
-  onNavigateTranslate: () -> Unit,
   enableAnimation: Boolean,
   modifier: Modifier = Modifier,
   gm4: Boolean = false,
@@ -456,698 +424,66 @@ fun HomeScreen(
                 )
               }
 
-              Column(
-                modifier = Modifier
-                  .fillMaxWidth()
-                  .padding(horizontal = 20.dp),
-                verticalArrangement = Arrangement.spacedBy(16.dp)
-              ) {
-                // New Home Header: Welcome Back
+              Column(modifier = Modifier.fillMaxWidth()) {
+                var selectedCategoryIndex by remember { mutableIntStateOf(0) }
+
+                // App title and intro text.
                 Column(
-                  modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(top = 12.dp)
-                ) {
-                  Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically
-                  ) {
-                    Row(
-                      verticalAlignment = Alignment.CenterVertically,
-                      modifier = Modifier.clickable { onNavigateProfile() }
-                    ) {
-                      Box(contentAlignment = Alignment.BottomEnd) {
-                        Image(
-                          painter = painterResource(id = R.drawable.img_nexora_avatar_1785307944144),
-                          contentDescription = "Profile",
-                          modifier = Modifier
-                            .size(46.dp)
-                            .clip(CircleShape)
-                            .background(MaterialTheme.colorScheme.primaryContainer),
-                          contentScale = ContentScale.Crop
-                        )
-                        Box(
-                          modifier = Modifier
-                            .size(12.dp)
-                            .clip(CircleShape)
-                            .background(Color(0xFF22C55E))
-                            .border(2.dp, MaterialTheme.colorScheme.background, CircleShape)
-                        )
-                      }
-                      Spacer(modifier = Modifier.width(12.dp))
-                      Column {
-                        Text(
-                          "Welcome Back 👋",
-                          style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold),
-                          color = MaterialTheme.colorScheme.onSurface
-                        )
-                        Text(
-                          "Power your productivity with private on-device AI.",
-                          style = MaterialTheme.typography.bodySmall,
-                          color = MaterialTheme.colorScheme.onSurfaceVariant
-                        )
-                      }
-                    }
-
-                    Row {
-                      IconButton(onClick = onNotificationsClicked) {
-                        Icon(Icons.Rounded.Notifications, contentDescription = "Notifications")
-                      }
-                      IconButton(onClick = onNavigateSettings) {
-                        Icon(Icons.Rounded.Settings, contentDescription = "Settings")
-                      }
-                    }
-                  }
-                }
-
-                // Animated Real-time Search Box
-                var searchQuery by remember { mutableStateOf("") }
-                OutlinedTextField(
-                  value = searchQuery,
-                  onValueChange = { searchQuery = it },
-                  placeholder = { Text("Search AI chat, vision, voice, code, docs...") },
-                  leadingIcon = { Icon(Icons.Rounded.Search, contentDescription = null, tint = MaterialTheme.colorScheme.primary) },
-                  shape = RoundedCornerShape(24.dp),
-                  modifier = Modifier.fillMaxWidth()
-                )
-
-                // Quick Action Chips
-                LazyRow(
-                  horizontalArrangement = Arrangement.spacedBy(8.dp),
-                  modifier = Modifier.fillMaxWidth()
-                ) {
-                  item {
-                    AssistChip(
-                      onClick = { modelManagerViewModel.getTaskById(BuiltInTaskId.LLM_CHAT)?.let { navigateToTaskScreen(it) } },
-                      label = { Text("⚡ Fast Summarize") }
-                    )
-                  }
-                  item {
-                    AssistChip(
-                      onClick = { modelManagerViewModel.getTaskById(BuiltInTaskId.LLM_ASK_IMAGE)?.let { navigateToTaskScreen(it) } },
-                      label = { Text("🔮 Analyze Image") }
-                    )
-                  }
-                  item {
-                    AssistChip(
-                      onClick = { onNavigateStudio() },
-                      label = { Text("💻 Generate Code") }
-                    )
-                  }
-                  item {
-                    AssistChip(
-                      onClick = { modelManagerViewModel.getTaskById(BuiltInTaskId.LLM_ASK_AUDIO)?.let { navigateToTaskScreen(it) } },
-                      label = { Text("🎙️ Voice AI") }
-                    )
-                  }
-                }
-
-                // Main Sections / Feature Grid (12 Cards)
-                Text(
-                  "Main AI Hub",
-                  style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
-                  color = MaterialTheme.colorScheme.onSurface
-                )
-
-                Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
-                  // Row 1
-                  Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.spacedBy(12.dp)
-                  ) {
-                    FeatureCardItem(
-                      title = "AI Chat",
-                      subtitle = "Natural conversations",
-                      icon = Icons.Rounded.ChatBubbleOutline,
-                      gradientColors = listOf(Color(0xFF00F0FF), Color(0xFF2563EB)),
-                      onClick = { modelManagerViewModel.getTaskById(BuiltInTaskId.LLM_CHAT)?.let { navigateToTaskScreen(it) } },
-                      modifier = Modifier.weight(1f)
-                    )
-                    FeatureCardItem(
-                      title = "Vision AI",
-                      subtitle = "Analyze Images",
-                      icon = Icons.Rounded.Image,
-                      gradientColors = listOf(Color(0xFF8B5CF6), Color(0xFFEC4899)),
-                      onClick = { modelManagerViewModel.getTaskById(BuiltInTaskId.LLM_ASK_IMAGE)?.let { navigateToTaskScreen(it) } },
-                      modifier = Modifier.weight(1f)
-                    )
-                  }
-
-                  // Row 2
-                  Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.spacedBy(12.dp)
-                  ) {
-                    FeatureCardItem(
-                      title = "AI Voice",
-                      subtitle = "Speech Assistant",
-                      icon = Icons.Rounded.GraphicEq,
-                      gradientColors = listOf(Color(0xFF10B981), Color(0xFF059669)),
-                      onClick = { modelManagerViewModel.getTaskById(BuiltInTaskId.LLM_ASK_AUDIO)?.let { navigateToTaskScreen(it) } },
-                      modifier = Modifier.weight(1f)
-                    )
-                    FeatureCardItem(
-                      title = "Code Studio",
-                      subtitle = "Generate Code",
-                      icon = Icons.Rounded.Code,
-                      gradientColors = listOf(Color(0xFFF59E0B), Color(0xFFEF4444)),
-                      onClick = { onNavigateStudio() },
-                      modifier = Modifier.weight(1f)
-                    )
-                  }
-
-                  // Row 3
-                  Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.spacedBy(12.dp)
-                  ) {
-                    FeatureCardItem(
-                      title = "Translator",
-                      subtitle = "Multi-language AI",
-                      icon = Icons.Rounded.Translate,
-                      gradientColors = listOf(Color(0xFF3B82F6), Color(0xFF1D4ED8)),
-                      onClick = onNavigateTranslate,
-                      modifier = Modifier.weight(1f)
-                    )
-                    FeatureCardItem(
-                      title = "Document AI",
-                      subtitle = "PDF & Doc Parsing",
-                      icon = Icons.Rounded.Description,
-                      gradientColors = listOf(Color(0xFF06B6D4), Color(0xFF0891B2)),
-                      onClick = onNavigateDocuments,
-                      modifier = Modifier.weight(1f)
-                    )
-                  }
-
-                  // Row 4
-                  Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.spacedBy(12.dp)
-                  ) {
-                    FeatureCardItem(
-                      title = "Writing Assistant",
-                      subtitle = "Smart Content",
-                      icon = Icons.Rounded.AutoAwesome,
-                      gradientColors = listOf(Color(0xFFA855F7), Color(0xFF7C3AED)),
-                      onClick = { modelManagerViewModel.getTaskById(BuiltInTaskId.LLM_CHAT)?.let { navigateToTaskScreen(it) } },
-                      modifier = Modifier.weight(1f)
-                    )
-                    FeatureCardItem(
-                      title = "Summarizer",
-                      subtitle = "Instant Text Summary",
-                      icon = Icons.Rounded.Article,
-                      gradientColors = listOf(Color(0xFFF43F5E), Color(0xFFE11D48)),
-                      onClick = { modelManagerViewModel.getTaskById(BuiltInTaskId.LLM_CHAT)?.let { navigateToTaskScreen(it) } },
-                      modifier = Modifier.weight(1f)
-                    )
-                  }
-
-                  // Row 5
-                  Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.spacedBy(12.dp)
-                  ) {
-                    FeatureCardItem(
-                      title = "Offline Models",
-                      subtitle = "On-Device Engine",
-                      icon = Icons.Rounded.Psychology,
-                      gradientColors = listOf(Color(0xFF14B8A6), Color(0xFF0D9488)),
-                      onClick = onModelsClicked,
-                      modifier = Modifier.weight(1f)
-                    )
-                    FeatureCardItem(
-                      title = "History",
-                      subtitle = "Past AI Sessions",
-                      icon = Icons.Rounded.History,
-                      gradientColors = listOf(Color(0xFF6366F1), Color(0xFF4338CA)),
-                      onClick = onNavigateHistory,
-                      modifier = Modifier.weight(1f)
-                    )
-                  }
-
-                  // Row 6
-                  Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.spacedBy(12.dp)
-                  ) {
-                    FeatureCardItem(
-                      title = "Downloads",
-                      subtitle = "Model Weights",
-                      icon = Icons.Rounded.Download,
-                      gradientColors = listOf(Color(0xFF0284C7), Color(0xFF0369A1)),
-                      onClick = onModelsClicked,
-                      modifier = Modifier.weight(1f)
-                    )
-                    FeatureCardItem(
-                      title = "Smart Tools",
-                      subtitle = "Benchmarks & Extra",
-                      icon = Icons.Rounded.Build,
-                      gradientColors = listOf(Color(0xFF8B5CF6), Color(0xFF6D28D9)),
-                      onClick = onNavigateSettings,
-                      modifier = Modifier.weight(1f)
-                    )
-                  }
-                }
-
-                // Recent Activity Section
-                Spacer(modifier = Modifier.height(8.dp))
-                Text(
-                  "Recent Activity",
-                  style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
-                  color = MaterialTheme.colorScheme.onSurface
-                )
-
-                NexoraGlassCard(
-                  modifier = Modifier.fillMaxWidth(),
-                  onClick = { modelManagerViewModel.getTaskById(BuiltInTaskId.LLM_CHAT)?.let { navigateToTaskScreen(it) } }
-                ) {
-                  Row(
-                    modifier = Modifier
-                      .fillMaxWidth()
-                      .padding(14.dp),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically
-                  ) {
-                    Row(verticalAlignment = Alignment.CenterVertically) {
-                      Box(
-                        modifier = Modifier
-                          .size(38.dp)
-                          .clip(CircleShape)
-                          .background(Color(0xFF00F0FF).copy(alpha = 0.15f)),
-                        contentAlignment = Alignment.Center
-                      ) {
-                        Icon(Icons.Rounded.ChatBubbleOutline, contentDescription = null, tint = Color(0xFF00F0FF))
-                      }
-                      Spacer(modifier = Modifier.width(12.dp))
-                      Column {
-                        Text(
-                          "Explain Quantum Entanglement simply",
-                          style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
-                          color = MaterialTheme.colorScheme.onSurface
-                        )
-                        Text(
-                          "AI Chat • 12 mins ago",
-                          style = MaterialTheme.typography.labelSmall,
-                          color = MaterialTheme.colorScheme.onSurfaceVariant
-                        )
-                      }
-                    }
-                    Text(
-                      "Completed",
-                      style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold),
-                      color = Color(0xFF22C55E)
-                    )
-                  }
-                }
-
-                NexoraGlassCard(
-                  modifier = Modifier.fillMaxWidth(),
-                  onClick = { onNavigateStudio() }
-                ) {
-                  Row(
-                    modifier = Modifier
-                      .fillMaxWidth()
-                      .padding(14.dp),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically
-                  ) {
-                    Row(verticalAlignment = Alignment.CenterVertically) {
-                      Box(
-                        modifier = Modifier
-                          .size(38.dp)
-                          .clip(CircleShape)
-                          .background(Color(0xFFF59E0B).copy(alpha = 0.15f)),
-                        contentAlignment = Alignment.Center
-                      ) {
-                        Icon(Icons.Rounded.Code, contentDescription = null, tint = Color(0xFFF59E0B))
-                      }
-                      Spacer(modifier = Modifier.width(12.dp))
-                      Column {
-                        Text(
-                          "Generate Kotlin Coroutines Flow example",
-                          style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
-                          color = MaterialTheme.colorScheme.onSurface
-                        )
-                        Text(
-                          "Code Studio • 1 hour ago",
-                          style = MaterialTheme.typography.labelSmall,
-                          color = MaterialTheme.colorScheme.onSurfaceVariant
-                        )
-                      }
-                    }
-                    Text(
-                      "Saved",
-                      style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold),
-                      color = MaterialTheme.colorScheme.primary
-                    )
-                  }
-                }
-
-                // Suggested AI Tools Section
-                Text(
-                  "Suggested AI Workflows",
-                  style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
-                  color = MaterialTheme.colorScheme.onSurface
-                )
-
-                Row(
-                  modifier = Modifier.fillMaxWidth(),
-                  horizontalArrangement = Arrangement.spacedBy(10.dp)
-                ) {
-                  NexoraGlassCard(
-                    modifier = Modifier.weight(1f),
-                    onClick = { onNavigateDocuments() }
-                  ) {
-                    Column(modifier = Modifier.padding(14.dp)) {
-                      Icon(Icons.Rounded.Description, contentDescription = null, tint = Color(0xFF06B6D4))
-                      Spacer(modifier = Modifier.height(8.dp))
-                      Text(
-                        "Summarize 10-page PDF",
-                        style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Bold),
-                        color = MaterialTheme.colorScheme.onSurface
+                  modifier =
+                    Modifier.padding(
+                        horizontal = if (gm4) 24.dp else 40.dp,
+                        vertical = if (gm4) 0.dp else 48.dp,
                       )
-                      Text(
-                        "Instant offline extraction",
-                        style = MaterialTheme.typography.labelSmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                      )
-                    }
-                  }
-
-                  NexoraGlassCard(
-                    modifier = Modifier.weight(1f),
-                    onClick = { onNavigateTranslate() }
-                  ) {
-                    Column(modifier = Modifier.padding(14.dp)) {
-                      Icon(Icons.Rounded.Translate, contentDescription = null, tint = Color(0xFF3B82F6))
-                      Spacer(modifier = Modifier.height(8.dp))
-                      Text(
-                        "Translate Document",
-                        style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Bold),
-                        color = MaterialTheme.colorScheme.onSurface
-                      )
-                      Text(
-                        "50+ Languages offline",
-                        style = MaterialTheme.typography.labelSmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                      )
-                    }
-                  }
-                }
-
-                Spacer(modifier = Modifier.height(16.dp))
-
-                // 1. ⭐ Recent Chats
-                Text(
-                  "⭐ Recent Chats",
-                  style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
-                  color = MaterialTheme.colorScheme.onSurface
-                )
-
-                Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-                  RecentChatCardItem(
-                    title = "Quantum Physics & Relativity Overview 🌌",
-                    time = "10 mins ago",
-                    snippet = "Explain light wave-particle duality simply...",
-                    onClick = { modelManagerViewModel.getTaskById(BuiltInTaskId.LLM_CHAT)?.let { navigateToTaskScreen(it) } }
-                  )
-                  RecentChatCardItem(
-                    title = "Kotlin Jetpack Compose Motion Layout 📱",
-                    time = "1 hour ago",
-                    snippet = "How to implement smooth spring physics for glassmorphism...",
-                    onClick = { modelManagerViewModel.getTaskById(BuiltInTaskId.LLM_CHAT)?.let { navigateToTaskScreen(it) } }
-                  )
-                  RecentChatCardItem(
-                    title = "System Architecture for Local AI ⚡",
-                    time = "Yesterday",
-                    snippet = "Compare LiteRT v2 with Vulkan GPU delegates...",
-                    onClick = { modelManagerViewModel.getTaskById(BuiltInTaskId.LLM_CHAT)?.let { navigateToTaskScreen(it) } }
-                  )
-                }
-
-                Spacer(modifier = Modifier.height(8.dp))
-
-                // 2. ⚡ Quick Actions
-                Text(
-                  "⚡ Quick Actions",
-                  style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
-                  color = MaterialTheme.colorScheme.onSurface
-                )
-
-                LazyRow(
-                  horizontalArrangement = Arrangement.spacedBy(10.dp),
-                  modifier = Modifier.fillMaxWidth()
+                      .padding(top = 24.dp, bottom = 16.dp)
+                      .semantics(mergeDescendants = true) {},
+                  verticalArrangement = Arrangement.spacedBy(8.dp),
                 ) {
-                  item {
-                    QuickActionGlassChip(
-                      icon = Icons.Rounded.Code,
-                      label = "Debug Kotlin Code",
-                      onClick = { onNavigateStudio() }
-                    )
+                  if (gm4) {
+                    AppTitleGm4(enableAnimation = enableAnimation)
+                  } else {
+                    AppTitle(enableAnimation = enableAnimation)
                   }
-                  item {
-                    QuickActionGlassChip(
-                      icon = Icons.Rounded.Description,
-                      label = "Summarize PDF",
-                      onClick = { onNavigateDocuments() }
-                    )
-                  }
-                  item {
-                    QuickActionGlassChip(
-                      icon = Icons.Rounded.Translate,
-                      label = "Translate Document",
-                      onClick = { onNavigateTranslate() }
-                    )
-                  }
-                  item {
-                    QuickActionGlassChip(
-                      icon = Icons.Rounded.GraphicEq,
-                      label = "Voice Scribe",
-                      onClick = { modelManagerViewModel.getTaskById(BuiltInTaskId.LLM_ASK_AUDIO)?.let { navigateToTaskScreen(it) } }
-                    )
+                  IntroText(enableAnimation = enableAnimation, gm4 = gm4)
+                  if (gm4) {
+                    TryGm4IntroText(enableAnimation = enableAnimation)
                   }
                 }
 
-                Spacer(modifier = Modifier.height(8.dp))
+                // Tab header for categories.
+                //
+                // synchronizes the `pagerState` and the `selectedCategoryIndex` to ensure that
+                //  both the tab header and the task list always show the correct category and page.
+                val pagerState = rememberPagerState(pageCount = { sortedCategories.size })
+                LaunchedEffect(pagerState.settledPage) {
+                  selectedCategoryIndex = pagerState.settledPage
+                }
+                if (sortedCategories.size > 1) {
+                  CategoryTabHeader(
+                    sortedCategories = sortedCategories,
+                    selectedIndex = selectedCategoryIndex,
+                    enableAnimation = enableAnimation,
+                    onCategorySelected = { index ->
+                      selectedCategoryIndex = index
+                      scope.launch { pagerState.animateScrollToPage(page = index) }
+                    },
+                  )
+                }
 
-                // 3. 💡 Suggested Prompts
-                Text(
-                  "💡 Suggested Prompts",
-                  style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
-                  color = MaterialTheme.colorScheme.onSurface
+                // Task list in a horizontal pager. Each page shows the list of tasks for the
+                // category.
+                val grid = gm4
+                TaskList(
+                  modelManagerViewModel = modelManagerViewModel,
+                  pagerState = pagerState,
+                  sortedCategories = sortedCategories,
+                  tasksByCategories = uiState.tasksByCategory,
+                  enableAnimation = enableAnimation,
+                  navigateToTaskScreen = navigateToTaskScreen,
+                  gm4 = gm4,
+                  grid = grid,
                 )
 
-                Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-                  SuggestedPromptCard(
-                    prompt = "🤖 Draft a clean Kotlin Coroutines Flow repository class",
-                    category = "Coding",
-                    onClick = { modelManagerViewModel.getTaskById(BuiltInTaskId.LLM_CHAT)?.let { navigateToTaskScreen(it) } }
-                  )
-                  SuggestedPromptCard(
-                    prompt = "🖼️ What are the key objects and text in this image?",
-                    category = "Vision AI",
-                    onClick = { modelManagerViewModel.getTaskById(BuiltInTaskId.LLM_ASK_IMAGE)?.let { navigateToTaskScreen(it) } }
-                  )
-                  SuggestedPromptCard(
-                    prompt = "📝 Summarize meeting notes into 3 concise action items",
-                    category = "Productivity",
-                    onClick = { modelManagerViewModel.getTaskById(BuiltInTaskId.LLM_CHAT)?.let { navigateToTaskScreen(it) } }
-                  )
-                }
-
-                Spacer(modifier = Modifier.height(8.dp))
-
-                // 4. 📊 Usage Overview
-                Text(
-                  "📊 Usage Overview",
-                  style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
-                  color = MaterialTheme.colorScheme.onSurface
-                )
-
-                Row(
-                  modifier = Modifier.fillMaxWidth(),
-                  horizontalArrangement = Arrangement.spacedBy(10.dp)
-                ) {
-                  UsageStatBox(
-                    count = "18",
-                    label = "Chats Today",
-                    icon = Icons.Rounded.ChatBubbleOutline,
-                    color = Color(0xFF00F0FF),
-                    modifier = Modifier.weight(1f)
-                  )
-                  UsageStatBox(
-                    count = "7",
-                    label = "Images Analyzed",
-                    icon = Icons.Rounded.Image,
-                    color = Color(0xFF8B5CF6),
-                    modifier = Modifier.weight(1f)
-                  )
-                }
-
-                Row(
-                  modifier = Modifier.fillMaxWidth(),
-                  horizontalArrangement = Arrangement.spacedBy(10.dp)
-                ) {
-                  UsageStatBox(
-                    count = "4",
-                    label = "Voice Requests",
-                    icon = Icons.Rounded.GraphicEq,
-                    color = Color(0xFF10B981),
-                    modifier = Modifier.weight(1f)
-                  )
-                  UsageStatBox(
-                    count = "12",
-                    label = "Docs Processed",
-                    icon = Icons.Rounded.Description,
-                    color = Color(0xFFF59E0B),
-                    modifier = Modifier.weight(1f)
-                  )
-                }
-
-                Spacer(modifier = Modifier.height(8.dp))
-
-                // 5. 📥 Downloaded Models
-                Text(
-                  "📥 Downloaded Models",
-                  style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
-                  color = MaterialTheme.colorScheme.onSurface
-                )
-
-                NexoraGlassCard(
-                  modifier = Modifier.fillMaxWidth(),
-                  onClick = onModelsClicked
-                ) {
-                  Column(modifier = Modifier.padding(16.dp)) {
-                    Row(
-                      modifier = Modifier.fillMaxWidth(),
-                      horizontalArrangement = Arrangement.SpaceBetween,
-                      verticalAlignment = Alignment.CenterVertically
-                    ) {
-                      Row(verticalAlignment = Alignment.CenterVertically) {
-                        Box(
-                          modifier = Modifier
-                            .size(38.dp)
-                            .clip(CircleShape)
-                            .background(Color(0xFF8B5CF6).copy(alpha = 0.2f)),
-                          contentAlignment = Alignment.Center
-                        ) {
-                          Icon(Icons.Rounded.Psychology, contentDescription = null, tint = Color(0xFF8B5CF6))
-                        }
-                        Spacer(modifier = Modifier.width(12.dp))
-                        Column {
-                          Text(
-                            "Gemma 4 2B + LiteRT Vision",
-                            style = MaterialTheme.typography.titleSmall.copy(fontWeight = FontWeight.Bold),
-                            color = MaterialTheme.colorScheme.onSurface
-                          )
-                          Text(
-                            "2 Models Active • 100% Offline Mode",
-                            style = MaterialTheme.typography.labelSmall,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant
-                          )
-                        }
-                      }
-                      Box(
-                        modifier = Modifier
-                          .clip(RoundedCornerShape(12.dp))
-                          .background(Color(0xFF22C55E).copy(alpha = 0.2f))
-                          .padding(horizontal = 10.dp, vertical = 4.dp)
-                      ) {
-                        Text(
-                          "Ready",
-                          style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold),
-                          color = Color(0xFF22C55E)
-                        )
-                      }
-                    }
-
-                    Spacer(modifier = Modifier.height(12.dp))
-
-                    Row(
-                      modifier = Modifier.fillMaxWidth(),
-                      horizontalArrangement = Arrangement.SpaceBetween
-                    ) {
-                      Text(
-                        "Storage Used: 4.2 GB of 128 GB",
-                        style = MaterialTheme.typography.labelMedium,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                      )
-                      Text(
-                        "Manage Models ›",
-                        style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Bold),
-                        color = MaterialTheme.colorScheme.primary
-                      )
-                    }
-                  }
-                }
-
-                Spacer(modifier = Modifier.height(8.dp))
-
-                // 6. ❤️ Favorites
-                Text(
-                  "❤️ Favorites",
-                  style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
-                  color = MaterialTheme.colorScheme.onSurface
-                )
-
-                Row(
-                  modifier = Modifier.fillMaxWidth(),
-                  horizontalArrangement = Arrangement.spacedBy(10.dp)
-                ) {
-                  FavoriteToolCard(
-                    title = "Code Studio",
-                    subtitle = "Pinned Tool",
-                    icon = Icons.Rounded.Code,
-                    color = Color(0xFFF59E0B),
-                    onClick = onNavigateStudio,
-                    modifier = Modifier.weight(1f)
-                  )
-                  FavoriteToolCard(
-                    title = "Vision AI",
-                    subtitle = "Pinned Tool",
-                    icon = Icons.Rounded.Image,
-                    color = Color(0xFF8B5CF6),
-                    onClick = { modelManagerViewModel.getTaskById(BuiltInTaskId.LLM_ASK_IMAGE)?.let { navigateToTaskScreen(it) } },
-                    modifier = Modifier.weight(1f)
-                  )
-                }
-
-                Spacer(modifier = Modifier.height(8.dp))
-
-                // 7. 📰 AI News & Tips
-                Text(
-                  "📰 AI News & Tips",
-                  style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
-                  color = MaterialTheme.colorScheme.onSurface
-                )
-
-                NexoraGlassCard(
-                  modifier = Modifier.fillMaxWidth()
-                ) {
-                  Column(
-                    modifier = Modifier.padding(16.dp),
-                    verticalArrangement = Arrangement.spacedBy(10.dp)
-                  ) {
-                    NewsTipRow(
-                      badge = "PRO TIP",
-                      badgeColor = Color(0xFF00F0FF),
-                      text = "Run Gemma 4 100% offline on your device with zero cloud latency."
-                    )
-                    NewsTipRow(
-                      badge = "FEATURE",
-                      badgeColor = Color(0xFF8B5CF6),
-                      text = "LiteRT Vision engine now supports multi-object analysis & OCR."
-                    )
-                    NewsTipRow(
-                      badge = "RELEASE",
-                      badgeColor = Color(0xFF10B981),
-                      text = "Nexora v1.0 released with Vulkan & OpenCL NPU acceleration."
-                    )
-                  }
-                }
-
-                Spacer(modifier = Modifier.height(innerPadding.calculateBottomPadding() + 20.dp))
+                Spacer(modifier = Modifier.height(innerPadding.calculateBottomPadding() + 10.dp))
               }
             }
 
@@ -1183,6 +519,7 @@ fun HomeScreen(
   if (showSettingsDialog) {
     SettingsDialog(
       curThemeOverride = modelManagerViewModel.readThemeOverride(),
+      curFirebaseAnalytics = modelManagerViewModel.readFirebaseAnalytics(),
       modelManagerViewModel = modelManagerViewModel,
       onDismissed = { showSettingsDialog = false },
     )
@@ -1198,14 +535,16 @@ fun HomeScreen(
         )
       },
       title = { Text(uiState.loadingModelAllowlistError) },
-      text = { Text("Please check your internet connection and try again later.") },
+      text = { Text(stringResource(R.string.error_internet_connection)) },
       onDismissRequest = { modelManagerViewModel.loadModelAllowlist() },
       confirmButton = {
-        TextButton(onClick = { modelManagerViewModel.loadModelAllowlist() }) { Text("Retry") }
+        TextButton(onClick = { modelManagerViewModel.loadModelAllowlist() }) {
+          Text(stringResource(R.string.retry))
+        }
       },
       dismissButton = {
         TextButton(onClick = { modelManagerViewModel.clearLoadModelAllowlistError() }) {
-          Text("Cancel")
+          Text(stringResource(R.string.cancel))
         }
       },
     )
@@ -1290,8 +629,8 @@ private fun AppTitle(enableAnimation: Boolean) {
 
 @Composable
 fun AppTitleGm4(enableAnimation: Boolean) {
-  val text1 = "NexUs"
-  val text2 = "AI Assistant"
+  val text1 = "Google"
+  val text2 = "AI Edge Gallery"
   val annotatedText = buildAnnotatedString {
     withStyle(style = SpanStyle(color = MaterialTheme.colorScheme.onSurface)) { append(text1) }
     append(" ")
@@ -1334,10 +673,20 @@ private fun IntroText(enableAnimation: Boolean, gm4: Boolean) {
   val introText = buildAnnotatedString {
     val gemma4Url = "https://ai.google.dev/gemma"
     if (gm4) {
-      append("Discover the power of on-device AI models from the ")
-      append(buildTrackableUrlAnnotatedString(url = litertUrl, linkText = "LiteRT community"))
-      append(", featuring the all-new ")
-      append(buildTrackableUrlAnnotatedString(url = gemma4Url, linkText = "Gemma 4"))
+      append("${stringResource(R.string.gemma4_intro_part_1)} ")
+      append(
+        buildTrackableUrlAnnotatedString(
+          url = litertUrl,
+          linkText = stringResource(R.string.litert_community_label),
+        )
+      )
+      append("${stringResource(R.string.gemma4_intro_part_2)} ")
+      append(
+        buildTrackableUrlAnnotatedString(
+          url = gemma4Url,
+          linkText = stringResource(R.string.gemma4_label),
+        )
+      )
       append(".")
     } else {
       append("${stringResource(R.string.app_intro)} ")
@@ -1389,7 +738,7 @@ private fun TryGm4IntroText(enableAnimation: Boolean) {
       tint = MaterialTheme.colorScheme.primary,
     )
     Text(
-      text = "Try Gemma 4 today",
+      text = stringResource(R.string.gemma_reskin_try_gemma_4_title),
       style =
         MaterialTheme.typography.headlineSmall.copy(
           fontWeight = FontWeight.Medium,
@@ -1401,7 +750,7 @@ private fun TryGm4IntroText(enableAnimation: Boolean) {
   }
 
   Text(
-    "Gemma 4 E2B & E4B are here! Try them in AI Chat, Agent Skills, or the use cases below.",
+    stringResource(R.string.gemma_reskin_try_gemma_4_description),
     style = MaterialTheme.typography.bodyMedium,
     modifier =
       Modifier.graphicsLayer {
@@ -1531,10 +880,10 @@ private fun TaskList(
     ) {
       val chatToDescription =
         mapOf(
-          BuiltInTaskId.LLM_CHAT to "Chat with the latest Gemma 4 model today",
+          BuiltInTaskId.LLM_CHAT to stringResource(R.string.gemma_reskin_try_gemma_4_chat),
           // use "\u00a0" to make sure the word before and after it should always be together when
           // wrapping lines.
-          BuiltInTaskId.LLM_AGENT_CHAT to "Have Gemma 4 complete agentic tasks for\u00A0you",
+          BuiltInTaskId.LLM_AGENT_CHAT to stringResource(R.string.gemma_reskin_try_gemma_4_skills),
         )
       for (task in
         listOf(
@@ -1552,7 +901,7 @@ private fun TaskList(
       }
 
       Text(
-        text = "Explore other use cases",
+        text = stringResource(R.string.explore_other_use_cases),
         style =
           MaterialTheme.typography.headlineSmall.copy(
             fontWeight = FontWeight.Medium,
@@ -1659,14 +1008,8 @@ private fun TaskCard(
       }
     }
   }
-  val modelCountLabel by remember {
-    derivedStateOf {
-      when (modelCount) {
-        1 -> "1 Model"
-        else -> "%d Models".format(modelCount)
-      }
-    }
-  }
+  val modelCountLabel =
+    pluralStringResource(R.plurals.task_card_models_count, modelCount, modelCount)
   var curModelCountLabel by remember { mutableStateOf("") }
   var modelCountLabelVisible by remember { mutableStateOf(true) }
 
@@ -1777,7 +1120,7 @@ private fun TaskCard(
                   contentAlignment = Alignment.Center,
                 ) {
                   Text(
-                    "New",
+                    stringResource(R.string.new_badge),
                     color = MaterialTheme.customColors.newFeatureTextColor,
                     style = MaterialTheme.typography.labelLarge,
                   )
@@ -1823,356 +1166,6 @@ private fun TaskCard(
         }
       }
     }
-  }
-}
-
-@Composable
-private fun QuickToolItem(
-  icon: ImageVector,
-  label: String,
-  onClick: () -> Unit,
-) {
-  Column(
-    horizontalAlignment = Alignment.CenterHorizontally,
-    modifier = Modifier
-      .clip(RoundedCornerShape(16.dp))
-      .clickable(onClick = onClick)
-      .padding(8.dp)
-  ) {
-    Box(
-      modifier = Modifier
-        .size(52.dp)
-        .clip(CircleShape)
-        .background(MaterialTheme.colorScheme.primaryContainer),
-      contentAlignment = Alignment.Center
-    ) {
-      Icon(
-        imageVector = icon,
-        contentDescription = label,
-        tint = MaterialTheme.colorScheme.onPrimaryContainer,
-        modifier = Modifier.size(26.dp)
-      )
-    }
-    Spacer(modifier = Modifier.height(6.dp))
-    Text(
-      text = label,
-      style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.SemiBold),
-      color = MaterialTheme.colorScheme.onSurface
-    )
-  }
-}
-
-@Composable
-private fun FeatureCardItem(
-  title: String,
-  subtitle: String,
-  icon: ImageVector,
-  gradientColors: List<Color>,
-  onClick: () -> Unit,
-  modifier: Modifier = Modifier,
-) {
-  Box(
-    modifier = modifier
-      .clip(RoundedCornerShape(22.dp))
-      .background(
-        Brush.linearGradient(
-          colors = listOf(
-            MaterialTheme.colorScheme.surfaceContainerHigh.copy(alpha = 0.85f),
-            MaterialTheme.colorScheme.surfaceContainer.copy(alpha = 0.95f)
-          )
-        )
-      )
-      .border(
-        1.dp,
-        Brush.linearGradient(
-          colors = listOf(
-            gradientColors.first().copy(alpha = 0.35f),
-            gradientColors.last().copy(alpha = 0.15f)
-          )
-        ),
-        RoundedCornerShape(22.dp)
-      )
-      .clickable { onClick() }
-      .padding(14.dp)
-  ) {
-    Column {
-      Box(
-        modifier = Modifier
-          .size(38.dp)
-          .clip(CircleShape)
-          .background(Brush.linearGradient(gradientColors)),
-        contentAlignment = Alignment.Center
-      ) {
-        Icon(
-          icon,
-          contentDescription = null,
-          tint = Color.White,
-          modifier = Modifier.size(20.dp)
-        )
-      }
-
-      Spacer(modifier = Modifier.height(10.dp))
-
-      Text(
-        title,
-        style = MaterialTheme.typography.titleSmall.copy(fontWeight = FontWeight.Bold),
-        color = MaterialTheme.colorScheme.onSurface
-      )
-
-      Text(
-        subtitle,
-        style = MaterialTheme.typography.labelSmall,
-        color = MaterialTheme.colorScheme.onSurfaceVariant,
-        maxLines = 1
-      )
-    }
-  }
-}
-
-@Composable
-private fun RecentChatCardItem(
-  title: String,
-  time: String,
-  snippet: String,
-  onClick: () -> Unit
-) {
-  NexoraGlassCard(
-    modifier = Modifier.fillMaxWidth(),
-    onClick = onClick
-  ) {
-    Row(
-      modifier = Modifier
-        .fillMaxWidth()
-        .padding(14.dp),
-      horizontalArrangement = Arrangement.SpaceBetween,
-      verticalAlignment = Alignment.CenterVertically
-    ) {
-      Row(
-        modifier = Modifier.weight(1f),
-        verticalAlignment = Alignment.CenterVertically
-      ) {
-        Box(
-          modifier = Modifier
-            .size(38.dp)
-            .clip(CircleShape)
-            .background(MaterialTheme.colorScheme.primaryContainer),
-          contentAlignment = Alignment.Center
-        ) {
-          Icon(
-            Icons.Rounded.ChatBubbleOutline,
-            contentDescription = null,
-            tint = MaterialTheme.colorScheme.primary,
-            modifier = Modifier.size(20.dp)
-          )
-        }
-        Spacer(modifier = Modifier.width(12.dp))
-        Column {
-          Text(
-            title,
-            style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Bold),
-            color = MaterialTheme.colorScheme.onSurface,
-            maxLines = 1
-          )
-          Spacer(modifier = Modifier.height(2.dp))
-          Text(
-            snippet,
-            style = MaterialTheme.typography.labelSmall,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
-            maxLines = 1
-          )
-        }
-      }
-      Spacer(modifier = Modifier.width(8.dp))
-      Text(
-        time,
-        style = MaterialTheme.typography.labelSmall,
-        color = MaterialTheme.colorScheme.primary
-      )
-    }
-  }
-}
-
-@Composable
-private fun QuickActionGlassChip(
-  icon: ImageVector,
-  label: String,
-  onClick: () -> Unit
-) {
-  NexoraGlassCard(
-    onClick = onClick
-  ) {
-    Row(
-      modifier = Modifier.padding(horizontal = 14.dp, vertical = 10.dp),
-      verticalAlignment = Alignment.CenterVertically
-    ) {
-      Icon(
-        icon,
-        contentDescription = null,
-        tint = MaterialTheme.colorScheme.primary,
-        modifier = Modifier.size(18.dp)
-      )
-      Spacer(modifier = Modifier.width(8.dp))
-      Text(
-        label,
-        style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.SemiBold),
-        color = MaterialTheme.colorScheme.onSurface
-      )
-    }
-  }
-}
-
-@Composable
-private fun SuggestedPromptCard(
-  prompt: String,
-  category: String,
-  onClick: () -> Unit
-) {
-  NexoraGlassCard(
-    modifier = Modifier.fillMaxWidth(),
-    onClick = onClick
-  ) {
-    Row(
-      modifier = Modifier
-        .fillMaxWidth()
-        .padding(14.dp),
-      horizontalArrangement = Arrangement.SpaceBetween,
-      verticalAlignment = Alignment.CenterVertically
-    ) {
-      Column(modifier = Modifier.weight(1f)) {
-        Text(
-          category.uppercase(),
-          style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold),
-          color = MaterialTheme.colorScheme.primary
-        )
-        Spacer(modifier = Modifier.height(4.dp))
-        Text(
-          prompt,
-          style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
-          color = MaterialTheme.colorScheme.onSurface
-        )
-      }
-      Icon(
-        Icons.Rounded.ChevronRight,
-        contentDescription = "Run Prompt",
-        tint = MaterialTheme.colorScheme.onSurfaceVariant
-      )
-    }
-  }
-}
-
-@Composable
-private fun UsageStatBox(
-  count: String,
-  label: String,
-  icon: ImageVector,
-  color: Color,
-  modifier: Modifier = Modifier
-) {
-  NexoraGlassCard(modifier = modifier) {
-    Column(modifier = Modifier.padding(14.dp)) {
-      Row(
-        modifier = Modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.SpaceBetween,
-        verticalAlignment = Alignment.CenterVertically
-      ) {
-        Box(
-          modifier = Modifier
-            .size(34.dp)
-            .clip(CircleShape)
-            .background(color.copy(alpha = 0.15f)),
-          contentAlignment = Alignment.Center
-        ) {
-          Icon(icon, contentDescription = null, tint = color, modifier = Modifier.size(18.dp))
-        }
-        Text(
-          count,
-          style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold),
-          color = MaterialTheme.colorScheme.onSurface
-        )
-      }
-      Spacer(modifier = Modifier.height(8.dp))
-      Text(
-        label,
-        style = MaterialTheme.typography.labelSmall,
-        color = MaterialTheme.colorScheme.onSurfaceVariant
-      )
-    }
-  }
-}
-
-@Composable
-private fun FavoriteToolCard(
-  title: String,
-  subtitle: String,
-  icon: ImageVector,
-  color: Color,
-  onClick: () -> Unit,
-  modifier: Modifier = Modifier
-) {
-  NexoraGlassCard(
-    modifier = modifier,
-    onClick = onClick
-  ) {
-    Row(
-      modifier = Modifier
-        .fillMaxWidth()
-        .padding(14.dp),
-      verticalAlignment = Alignment.CenterVertically
-    ) {
-      Box(
-        modifier = Modifier
-          .size(38.dp)
-          .clip(CircleShape)
-          .background(color.copy(alpha = 0.18f)),
-        contentAlignment = Alignment.Center
-      ) {
-        Icon(icon, contentDescription = null, tint = color, modifier = Modifier.size(20.dp))
-      }
-      Spacer(modifier = Modifier.width(10.dp))
-      Column {
-        Text(
-          title,
-          style = MaterialTheme.typography.titleSmall.copy(fontWeight = FontWeight.Bold),
-          color = MaterialTheme.colorScheme.onSurface
-        )
-        Text(
-          subtitle,
-          style = MaterialTheme.typography.labelSmall,
-          color = MaterialTheme.colorScheme.onSurfaceVariant
-        )
-      }
-    }
-  }
-}
-
-@Composable
-private fun NewsTipRow(
-  badge: String,
-  badgeColor: Color,
-  text: String
-) {
-  Row(
-    verticalAlignment = Alignment.CenterVertically,
-    modifier = Modifier.fillMaxWidth()
-  ) {
-    Box(
-      modifier = Modifier
-        .clip(RoundedCornerShape(8.dp))
-        .background(badgeColor.copy(alpha = 0.2f))
-        .padding(horizontal = 8.dp, vertical = 3.dp)
-    ) {
-      Text(
-        badge,
-        style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold),
-        color = badgeColor
-      )
-    }
-    Spacer(modifier = Modifier.width(10.dp))
-    Text(
-      text,
-      style = MaterialTheme.typography.bodySmall,
-      color = MaterialTheme.colorScheme.onSurface
-    )
   }
 }
 

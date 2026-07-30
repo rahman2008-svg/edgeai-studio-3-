@@ -38,6 +38,7 @@ import com.google.ai.edge.gallery.data.KEY_MODEL_DOWNLOAD_RECEIVED_BYTES
 import com.google.ai.edge.gallery.data.KEY_MODEL_DOWNLOAD_REMAINING_MS
 import com.google.ai.edge.gallery.data.KEY_MODEL_EXTRA_DATA_DOWNLOAD_FILE_NAMES
 import com.google.ai.edge.gallery.data.KEY_MODEL_EXTRA_DATA_URLS
+import com.google.ai.edge.gallery.data.KEY_MODEL_IS_IMPORTED
 import com.google.ai.edge.gallery.data.KEY_MODEL_IS_ZIP
 import com.google.ai.edge.gallery.data.KEY_MODEL_NAME
 import com.google.ai.edge.gallery.data.KEY_MODEL_START_UNZIPPING
@@ -96,6 +97,7 @@ class DownloadWorker(context: Context, params: WorkerParameters) :
     val version = inputData.getString(KEY_MODEL_COMMIT_HASH)!!
     val fileName = inputData.getString(KEY_MODEL_DOWNLOAD_FILE_NAME)
     val modelDir = inputData.getString(KEY_MODEL_DOWNLOAD_MODEL_DIR)!!
+    val isModelImported = inputData.getBoolean(KEY_MODEL_IS_IMPORTED, false)
     val isZip = inputData.getBoolean(KEY_MODEL_IS_ZIP, false)
     val unzippedDir = inputData.getString(KEY_MODEL_UNZIPPED_DIR)
     val extraDataFileUrls = inputData.getString(KEY_MODEL_EXTRA_DATA_URLS)?.split(",") ?: listOf()
@@ -138,21 +140,33 @@ class DownloadWorker(context: Context, params: WorkerParameters) :
 
             // Prepare output file's dir.
             val outputDir =
-              File(
-                applicationContext.getExternalFilesDir(null),
-                listOf(modelDir, version).joinToString(separator = File.separator),
-              )
+              if (isModelImported) {
+                File(applicationContext.getExternalFilesDir(null), modelDir)
+              } else {
+                File(
+                  applicationContext.getExternalFilesDir(null),
+                  listOf(modelDir, version).joinToString(separator = File.separator),
+                )
+              }
             if (!outputDir.exists()) {
               outputDir.mkdirs()
             }
 
             // Read the tmp file and see if it is partially downloaded.
             val outputTmpFile =
-              File(
-                applicationContext.getExternalFilesDir(null),
-                listOf(modelDir, version, "${file.fileName}.$TMP_FILE_EXT")
-                  .joinToString(separator = File.separator),
-              )
+              if (isModelImported) {
+                File(
+                  applicationContext.getExternalFilesDir(null),
+                  listOf(modelDir, "${file.fileName}.$TMP_FILE_EXT")
+                    .joinToString(separator = File.separator),
+                )
+              } else {
+                File(
+                  applicationContext.getExternalFilesDir(null),
+                  listOf(modelDir, version, "${file.fileName}.$TMP_FILE_EXT")
+                    .joinToString(separator = File.separator),
+                )
+              }
             val outputFileBytes = outputTmpFile.length()
             if (outputFileBytes > 0) {
               Log.d(
@@ -198,17 +212,15 @@ class DownloadWorker(context: Context, params: WorkerParameters) :
             val buffer = ByteArray(DEFAULT_BUFFER_SIZE)
             var bytesRead: Int
             var lastSetProgressTs: Long = 0
-            var lastForegroundTs: Long = 0
-            var lastReportedProgress: Int = -1
             var deltaBytes = 0L
             while (inputStream.read(buffer).also { bytesRead = it } != -1) {
               outputStream.write(buffer, 0, bytesRead)
               downloadedBytes += bytesRead
               deltaBytes += bytesRead
 
-              // Report progress state every 500 ms.
+              // Report progress every 200 ms.
               val curTs = System.currentTimeMillis()
-              if (curTs - lastSetProgressTs > 500) {
+              if (curTs - lastSetProgressTs > 200) {
                 // Calculate download rate.
                 var bytesPerMs = 0f
                 if (lastSetProgressTs != 0L) {
@@ -237,22 +249,12 @@ class DownloadWorker(context: Context, params: WorkerParameters) :
                     .putLong(KEY_MODEL_DOWNLOAD_REMAINING_MS, remainingMs.toLong())
                     .build()
                 )
-
-                val currentProgress = if (totalBytes > 0L) (downloadedBytes * 100 / totalBytes).toInt() else 0
-                if ((curTs - lastForegroundTs >= 3000 || currentProgress - lastReportedProgress >= 5 || currentProgress == 100) && currentProgress != lastReportedProgress) {
-                  lastReportedProgress = currentProgress
-                  lastForegroundTs = curTs
-                  try {
-                    setForeground(
-                      createForegroundInfo(
-                        progress = currentProgress,
-                        modelName = modelName,
-                      )
-                    )
-                  } catch (e: Exception) {
-                    Log.w(TAG, "Failed to update foreground notification: ${e.message}")
-                  }
-                }
+                setForeground(
+                  createForegroundInfo(
+                    progress = (downloadedBytes * 100 / totalBytes).toInt(),
+                    modelName = modelName,
+                  )
+                )
                 Log.d(TAG, "downloadedBytes: $downloadedBytes")
                 lastSetProgressTs = curTs
               }

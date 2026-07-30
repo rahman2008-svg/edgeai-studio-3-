@@ -128,6 +128,9 @@ data class CustomColors(
   val agentBubbleBgColor: Color = Color.Transparent,
   val linkColor: Color = Color.Transparent,
   val successColor: Color = Color.Transparent,
+  val positiveStrokeColor: Color = Color.Transparent,
+  val negativeStrokeColor: Color = Color.Transparent,
+  val lassoStrokeColor: Color = Color.Transparent,
   val recordButtonBgColor: Color = Color.Transparent,
   val waveFormBgColor: Color = Color.Transparent,
   val modelInfoIconColor: Color = Color.Transparent,
@@ -146,63 +149,79 @@ val LocalCustomColors = staticCompositionLocalOf { CustomColors() }
 
 val lightCustomColors =
   CustomColors(
-    appTitleGradientColors = listOf(Color(0xFF6366F1), Color(0xFF06B6D4), Color(0xFFA855F7)),
-    tabHeaderBgColor = Color(0xFF4F46E5),
+    appTitleGradientColors = listOf(Color(0xFF85B1F8), Color(0xFF3174F1)),
+    tabHeaderBgColor = Color(0xFF3174F1),
     taskCardBgColor = surfaceContainerLowestLight,
     taskBgColors =
       listOf(
-        Color(0xFFEEF2FF),
-        Color(0xFFECFEFF),
-        Color(0xFFFAF5FF),
-        Color(0xFFFEF3C7),
+        // red
+        Color(0xFFFFF5F5),
+        // green
+        Color(0xFFF4FBF6),
+        // blue
+        Color(0xFFF1F6FE),
+        // yellow
+        Color(0xFFFFFBF0),
       ),
     taskBgGradientColors =
       listOf(
-        listOf(Color(0xFF6366F1), Color(0xFF4338CA)),
-        listOf(Color(0xFF06B6D4), Color(0xFF0891B2)),
-        listOf(Color(0xFFA855F7), Color(0xFF7E22CE)),
-        listOf(Color(0xFFF59E0B), Color(0xFFD97706)),
+        // red
+        listOf(Color(0xFFE25F57), Color(0xFFDB372D)),
+        // green
+        listOf(Color(0xFF41A15F), Color(0xFF128937)),
+        // blue
+        listOf(Color(0xFF669DF6), Color(0xFF3174F1)),
+        // yellow
+        listOf(Color(0xFFFDD45D), Color(0xFFCAA12A)),
       ),
     taskIconColors =
       listOf(
-        Color(0xFF4F46E5),
-        Color(0xFF0891B2),
-        Color(0xFF7E22CE),
-        Color(0xFFD97706),
+        // red.
+        Color(0xFFDB372D),
+        // green
+        Color(0xFF128937),
+        // blue
+        Color(0xFF3174F1),
+        // yellow
+        Color(0xFFCAA12A),
       ),
     taskIconShapeBgColor = Color.White,
-    homeBottomGradient = listOf(Color(0x00F8FAFC), Color(0x336366F1)),
-    agentBubbleBgColor = Color(0xFFF1F5F9),
-    userBubbleBgColor = Color(0xFF4F46E5),
-    linkColor = Color(0xFF4F46E5),
-    successColor = Color(0xFF059669),
-    recordButtonBgColor = Color(0xFFEF4444),
-    waveFormBgColor = Color(0xFF94A3B8),
-    modelInfoIconColor = Color(0xFFCBD5E1),
-    warningContainerColor = Color(0xFFFEF3C7),
-    warningTextColor = Color(0xFFD97706),
-    errorContainerColor = Color(0xFFFEE2E2),
-    errorTextColor = Color(0xFFDC2626),
-    newFeatureContainerColor = Color(0xFFF3E8FF),
-    newFeatureTextColor = Color(0xFF6B21A8),
-    bgStarColor = Color(0x336366F1),
+    homeBottomGradient = listOf(Color(0x00F8F9FF), Color(0xffFFEFC9)),
+    agentBubbleBgColor = Color(0xFFe9eef6),
+    userBubbleBgColor = Color(0xFF32628D),
+    linkColor = Color(0xFF32628D),
+    successColor = Color(0xff3d860b),
+    positiveStrokeColor = Color(0xff3d860b),
+    negativeStrokeColor = Color(0xffd93025),
+    lassoStrokeColor = Color(0xFF00639B),
+    recordButtonBgColor = Color(0xFFEE675C),
+    waveFormBgColor = Color(0xFFaaaaaa),
+    modelInfoIconColor = Color(0xFFCCCCCC),
+    warningContainerColor = Color(0xfffef7e0),
+    warningTextColor = Color(0xffe37400),
+    errorContainerColor = Color(0xfffce8e6),
+    errorTextColor = Color(0xffd93025),
+    newFeatureContainerColor = Color(0xFFEEDCFE),
+    newFeatureTextColor = Color(0xFF400B84),
+    bgStarColor = Color(0x3A669AF5),
     promoBannerBgBrush =
       Brush.linearGradient(
         colorStops =
           arrayOf(
-            0.0f to Color(0x33818CF8),
-            0.5f to Color(0x3338BDF8),
-            1.0f to Color(0x33C084FC),
+            0.0f to Color(0x42ACB7FF),
+            0.6154f to Color(0x422D96FF),
+            1.0f to Color(0x423C6BFF),
           ),
         start = Offset(0f, 0f),
-        end = Offset(1000f, 1000f),
+        end = Offset(0f, Float.POSITIVE_INFINITY),
       ),
     promoBannerIconBgBrush =
       Brush.linearGradient(
         colorStops =
           arrayOf(
-            0.0f to Color(0x446366F1),
-            1.0f to Color(0x44A855F7),
+            0.2442f to Color(0x3B446EFF),
+            0.4296f to Color(0x3B2E96FF),
+            0.6651f to Color(0x3BB1C5FF),
           ),
         start = Offset(0f, 1f),
         end = Offset(1f, 0f),
@@ -211,58 +230,74 @@ val lightCustomColors =
 
 val darkCustomColors =
   CustomColors(
-    appTitleGradientColors = listOf(Color(0xFF818CF8), Color(0xFF38BDF8), Color(0xFFC084FC)),
-    tabHeaderBgColor = Color(0xFF4F46E5),
+    appTitleGradientColors = listOf(Color(0xFF85B1F8), Color(0xFF3174F1)),
+    tabHeaderBgColor = Color(0xFF3174F1),
     taskCardBgColor = surfaceContainerHighDark,
     taskBgColors =
       listOf(
-        Color(0xFF1E1B4B),
-        Color(0xFF164E63),
-        Color(0xFF3B0764),
-        Color(0xFF451A03),
+        // red
+        Color(0xFF181210),
+        // green
+        Color(0xFF131711),
+        // blue
+        Color(0xFF191924),
+        // yellow
+        Color(0xFF1A1813),
       ),
     taskBgGradientColors =
       listOf(
-        listOf(Color(0xFF818CF8), Color(0xFF6366F1)),
-        listOf(Color(0xFF38BDF8), Color(0xFF0284C7)),
-        listOf(Color(0xFFC084FC), Color(0xFFA855F7)),
-        listOf(Color(0xFFFBBF24), Color(0xFFF59E0B)),
+        // red
+        listOf(Color(0xFFE25F57), Color(0xFFDB372D)),
+        // green
+        listOf(Color(0xFF41A15F), Color(0xFF128937)),
+        // blue
+        listOf(Color(0xFF669DF6), Color(0xFF3174F1)),
+        // yellow
+        listOf(Color(0xFFFDD45D), Color(0xFFCAA12A)),
       ),
     taskIconColors =
       listOf(
-        Color(0xFF818CF8),
-        Color(0xFF38BDF8),
-        Color(0xFFC084FC),
-        Color(0xFFFBBF24),
+        // red.
+        Color(0xFFE25F57),
+        // green
+        Color(0xFF41A15F),
+        // blue
+        Color(0xFF669DF6),
+        // yellow
+        Color(0xFFCAA12A),
       ),
-    taskIconShapeBgColor = Color(0xFF0F172A),
-    homeBottomGradient = listOf(Color(0x0007090E), Color(0x22818CF8)),
-    agentBubbleBgColor = Color(0xFF1E293B),
-    userBubbleBgColor = Color(0xFF4338CA),
-    linkColor = Color(0xFF38BDF8),
-    successColor = Color(0xFF34D399),
-    recordButtonBgColor = Color(0xFFF87171),
-    waveFormBgColor = Color(0xFF64748B),
-    modelInfoIconColor = Color(0xFF475569),
-    warningContainerColor = Color(0xFF451A03),
-    warningTextColor = Color(0xFFFBBF24),
-    errorContainerColor = Color(0xFF450A0A),
-    errorTextColor = Color(0xFFF87171),
-    newFeatureContainerColor = Color(0xFF3B0764),
-    newFeatureTextColor = Color(0xFFE9D5FF),
-    bgStarColor = Color(0x22818CF8),
+    taskIconShapeBgColor = Color(0xFF202124),
+    homeBottomGradient = listOf(Color(0x00F8F9FF), Color(0x1AF6AD01)),
+    agentBubbleBgColor = Color(0xFF1b1c1d),
+    userBubbleBgColor = Color(0xFF1f3760),
+    linkColor = Color(0xFF9DCAFC),
+    successColor = Color(0xFFA1CE83),
+    positiveStrokeColor = Color(0xff3d860b),
+    negativeStrokeColor = Color(0xffd93025),
+    lassoStrokeColor = Color(0xFF00639B),
+    recordButtonBgColor = Color(0xFFEE675C),
+    waveFormBgColor = Color(0xFFaaaaaa),
+    modelInfoIconColor = Color(0xFFCCCCCC),
+    warningContainerColor = Color(0xff554c33),
+    warningTextColor = Color(0xfffcc934),
+    errorContainerColor = Color(0xff523a3b),
+    errorTextColor = Color(0xffee675c),
+    newFeatureContainerColor = Color(0xFFEEDCFE),
+    newFeatureTextColor = Color(0xFF400B84),
+    bgStarColor = Color(0x19346BF0),
     promoBannerBgBrush =
       Brush.linearGradient(
-        colorStops = arrayOf(0.0f to Color(0x44312E81), 1.0f to Color(0x44581C87)),
+        colorStops = arrayOf(0.0f to Color(0x82183570), 0.8077f to Color(0x820A122D)),
         start = Offset(0f, 0f),
-        end = Offset(1000f, 1000f),
+        end = Offset(0f, Float.POSITIVE_INFINITY),
       ),
     promoBannerIconBgBrush =
       Brush.linearGradient(
         colorStops =
           arrayOf(
-            0.0f to Color(0x664338CA),
-            1.0f to Color(0x667E22CE),
+            0.2442f to Color(0x6F0F41F8),
+            0.4296f to Color(0x6F1685F8),
+            0.6651f to Color(0x6F809EF3),
           ),
         start = Offset(0f, 1f),
         end = Offset(1f, 0f),
