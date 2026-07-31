@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery
+package com.nexvora.ai
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import com.google.ai.edge.gallery.ui.modelmanager.ModelManagerViewModel
-import com.google.ai.edge.gallery.ui.navigation.GalleryNavHost
+import com.nexvora.ai.ui.modelmanager.ModelManagerViewModel
+import com.nexvora.ai.ui.navigation.GalleryNavHost
 
 /** Top level composable representing the main screen of the application. */
 @Composable

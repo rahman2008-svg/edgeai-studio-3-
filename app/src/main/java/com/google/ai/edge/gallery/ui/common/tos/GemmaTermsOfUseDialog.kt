@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.common.tos
+package com.nexvora.ai.ui.common.tos
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -43,8 +43,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
-import com.google.ai.edge.gallery.R
-import com.google.ai.edge.gallery.ui.common.buildTrackableUrlAnnotatedString
+import com.nexvora.ai.R
+import com.nexvora.ai.ui.common.buildTrackableUrlAnnotatedString
 
 /** A composable for Gemma Terms of Use dialog, shown once before a Gemma model is downloaded. */
 @OptIn(ExperimentalMaterial3Api::class)

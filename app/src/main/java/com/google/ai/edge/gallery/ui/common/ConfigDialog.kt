@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.common
+package com.nexvora.ai.ui.common
 
 // import androidx.compose.ui.tooling.preview.Preview
-// import com.google.ai.edge.gallery.ui.preview.MODEL_TEST1
-// import com.google.ai.edge.gallery.ui.theme.GalleryTheme
+// import com.nexvora.ai.ui.preview.MODEL_TEST1
+// import com.nexvora.ai.ui.theme.GalleryTheme
 import android.util.Log
 import androidx.annotation.StringRes
 import androidx.compose.foundation.border
@@ -91,17 +91,17 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
-import com.google.ai.edge.gallery.R
-import com.google.ai.edge.gallery.data.BooleanSwitchConfig
-import com.google.ai.edge.gallery.data.BottomSheetSelectorConfig
-import com.google.ai.edge.gallery.data.BottomSheetSelectorItem
-import com.google.ai.edge.gallery.data.Config
-import com.google.ai.edge.gallery.data.ConfigKeys
-import com.google.ai.edge.gallery.data.LabelConfig
-import com.google.ai.edge.gallery.data.NumberSliderConfig
-import com.google.ai.edge.gallery.data.SegmentedButtonConfig
-import com.google.ai.edge.gallery.data.ValueType
-import com.google.ai.edge.gallery.ui.theme.labelSmallNarrow
+import com.nexvora.ai.R
+import com.nexvora.ai.data.BooleanSwitchConfig
+import com.nexvora.ai.data.BottomSheetSelectorConfig
+import com.nexvora.ai.data.BottomSheetSelectorItem
+import com.nexvora.ai.data.Config
+import com.nexvora.ai.data.ConfigKeys
+import com.nexvora.ai.data.LabelConfig
+import com.nexvora.ai.data.NumberSliderConfig
+import com.nexvora.ai.data.SegmentedButtonConfig
+import com.nexvora.ai.data.ValueType
+import com.nexvora.ai.ui.theme.labelSmallNarrow
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 

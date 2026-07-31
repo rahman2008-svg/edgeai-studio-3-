@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.benchmark
+package com.nexvora.ai.ui.benchmark
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
@@ -47,9 +47,9 @@ import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.google.ai.edge.gallery.R
-import com.google.ai.edge.gallery.proto.ValueSeries
-import com.google.ai.edge.gallery.ui.theme.customColors
+import com.nexvora.ai.R
+import com.nexvora.ai.proto.ValueSeries
+import com.nexvora.ai.ui.theme.customColors
 import java.util.Locale
 
 @OptIn(ExperimentalMaterial3Api::class)

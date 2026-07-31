@@ -20,7 +20,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.common.chat
+package com.nexvora.ai.ui.common.chat
 
 import android.media.AudioAttributes
 import android.media.AudioFormat
@@ -76,9 +76,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.google.ai.edge.gallery.R
-import com.google.ai.edge.gallery.data.MAX_AUDIO_CLIP_DURATION_SEC
-import com.google.ai.edge.gallery.ui.theme.customColors
+import com.nexvora.ai.R
+import com.nexvora.ai.data.MAX_AUDIO_CLIP_DURATION_SEC
+import com.nexvora.ai.ui.theme.customColors
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
 import kotlinx.coroutines.Dispatchers

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.tools
+package com.nexvora.ai.tools
 
 import io.modelcontextprotocol.kotlin.sdk.types.CallToolRequestParams
 import kotlinx.serialization.json.Json
@@ -22,11 +22,11 @@ import kotlinx.serialization.json.jsonObject
 
 import android.os.Bundle
 import android.util.Log
-import com.google.ai.edge.gallery.GalleryEvent
-import com.google.ai.edge.gallery.common.convertStringToJsonObject
-import com.google.ai.edge.gallery.firebaseAnalytics
-import com.google.ai.edge.gallery.mcp.McpServersProvider
-import com.google.ai.edge.gallery.skills.SkillsProvider
+import com.nexvora.ai.GalleryEvent
+import com.nexvora.ai.common.convertStringToJsonObject
+import com.nexvora.ai.firebaseAnalytics
+import com.nexvora.ai.mcp.McpServersProvider
+import com.nexvora.ai.skills.SkillsProvider
 import com.google.ai.edge.litertlm.Tool
 import com.google.ai.edge.litertlm.ToolParam
 import io.modelcontextprotocol.kotlin.sdk.CallToolRequest

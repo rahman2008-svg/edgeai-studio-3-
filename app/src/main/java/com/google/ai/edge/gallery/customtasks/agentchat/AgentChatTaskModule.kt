@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.customtasks.agentchat
+package com.nexvora.ai.customtasks.agentchat
 
 import android.content.Context
 import android.util.Log
@@ -22,19 +22,19 @@ import androidx.compose.runtime.Composable
 import androidx.datastore.core.DataStore
 import androidx.datastore.core.DataStoreFactory
 import androidx.datastore.dataStoreFile
-import com.google.ai.edge.gallery.R
-import com.google.ai.edge.gallery.customtasks.common.CustomTask
-import com.google.ai.edge.gallery.customtasks.common.CustomTaskDataForBuiltinTask
-import com.google.ai.edge.gallery.data.BuiltInTaskId
-import com.google.ai.edge.gallery.data.Category
-import com.google.ai.edge.gallery.data.Model
-import com.google.ai.edge.gallery.data.Task
-import com.google.ai.edge.gallery.proto.McpServers
-import com.google.ai.edge.gallery.proto.Skill
-import com.google.ai.edge.gallery.tools.RuntimeToolDispatcher
-import com.google.ai.edge.gallery.tools.ToolDispatcher
-import com.google.ai.edge.gallery.tools.ToolExecutionContext
-import com.google.ai.edge.gallery.ui.llmchat.LlmChatModelHelper
+import com.nexvora.ai.R
+import com.nexvora.ai.customtasks.common.CustomTask
+import com.nexvora.ai.customtasks.common.CustomTaskDataForBuiltinTask
+import com.nexvora.ai.data.BuiltInTaskId
+import com.nexvora.ai.data.Category
+import com.nexvora.ai.data.Model
+import com.nexvora.ai.data.Task
+import com.nexvora.ai.proto.McpServers
+import com.nexvora.ai.proto.Skill
+import com.nexvora.ai.tools.RuntimeToolDispatcher
+import com.nexvora.ai.tools.ToolDispatcher
+import com.nexvora.ai.tools.ToolExecutionContext
+import com.nexvora.ai.ui.llmchat.LlmChatModelHelper
 import com.google.ai.edge.litertlm.Contents
 import dagger.Module
 import dagger.Provides

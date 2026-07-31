@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.common.chat
+package com.nexvora.ai.ui.common.chat
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -33,14 +33,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.google.ai.edge.gallery.data.Model
-import com.google.ai.edge.gallery.data.ModelDownloadStatusType
-import com.google.ai.edge.gallery.data.Task
-import com.google.ai.edge.gallery.ui.common.RotationalLoader
-import com.google.ai.edge.gallery.ui.common.formatToHourMinSecond
-import com.google.ai.edge.gallery.ui.common.humanReadableSize
-import com.google.ai.edge.gallery.ui.modelmanager.ModelManagerViewModel
-import com.google.ai.edge.gallery.ui.theme.labelSmallNarrow
+import com.nexvora.ai.data.Model
+import com.nexvora.ai.data.ModelDownloadStatusType
+import com.nexvora.ai.data.Task
+import com.nexvora.ai.ui.common.RotationalLoader
+import com.nexvora.ai.ui.common.formatToHourMinSecond
+import com.nexvora.ai.ui.common.humanReadableSize
+import com.nexvora.ai.ui.modelmanager.ModelManagerViewModel
+import com.nexvora.ai.ui.theme.labelSmallNarrow
 
 /**
  * Composable function to display a loading animation using a 2x2 grid of images with a synchronized

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.common
+package com.nexvora.ai.ui.common
 
 import android.Manifest
 import android.content.Context
@@ -38,7 +38,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.webkit.WebViewAssetLoader
-import com.google.ai.edge.gallery.common.LOCAL_URL_BASE
+import com.nexvora.ai.common.LOCAL_URL_BASE
 import java.io.File
 
 private const val TAG = "AGGalleryWebView"

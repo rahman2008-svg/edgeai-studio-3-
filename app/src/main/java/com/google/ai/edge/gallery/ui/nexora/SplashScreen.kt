@@ -1,4 +1,4 @@
-package com.google.ai.edge.gallery.ui.nexora
+package com.nexvora.ai.ui.nexora
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.FastOutSlowInEasing
@@ -28,7 +28,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.google.ai.edge.gallery.R
+import com.nexvora.ai.R
 import kotlinx.coroutines.delay
 
 @Composable

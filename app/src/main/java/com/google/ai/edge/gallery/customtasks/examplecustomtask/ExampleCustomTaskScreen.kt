@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.customtasks.examplecustomtask
+package com.nexvora.ai.customtasks.examplecustomtask
 
 import androidx.hilt.navigation.compose.hiltViewModel
 
@@ -50,11 +50,11 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.google.ai.edge.gallery.R
-import com.google.ai.edge.gallery.data.ConfigKey
-import com.google.ai.edge.gallery.data.NumberSliderConfig
-import com.google.ai.edge.gallery.data.ValueType
-import com.google.ai.edge.gallery.ui.modelmanager.ModelManagerViewModel
+import com.nexvora.ai.R
+import com.nexvora.ai.data.ConfigKey
+import com.nexvora.ai.data.NumberSliderConfig
+import com.nexvora.ai.data.ValueType
+import com.nexvora.ai.ui.modelmanager.ModelManagerViewModel
 
 data class ExampleCustomTaskModelInstance(val content: String)
 

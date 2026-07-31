@@ -14,20 +14,20 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.llmsingleturn
+package com.nexvora.ai.ui.llmsingleturn
 
 import android.content.Context
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Widgets
 import androidx.compose.runtime.Composable
-import com.google.ai.edge.gallery.R
-import com.google.ai.edge.gallery.customtasks.common.CustomTask
-import com.google.ai.edge.gallery.customtasks.common.CustomTaskDataForBuiltinTask
-import com.google.ai.edge.gallery.data.BuiltInTaskId
-import com.google.ai.edge.gallery.data.Category
-import com.google.ai.edge.gallery.data.Model
-import com.google.ai.edge.gallery.data.Task
-import com.google.ai.edge.gallery.ui.llmchat.LlmChatModelHelper
+import com.nexvora.ai.R
+import com.nexvora.ai.customtasks.common.CustomTask
+import com.nexvora.ai.customtasks.common.CustomTaskDataForBuiltinTask
+import com.nexvora.ai.data.BuiltInTaskId
+import com.nexvora.ai.data.Category
+import com.nexvora.ai.data.Model
+import com.nexvora.ai.data.Task
+import com.nexvora.ai.ui.llmchat.LlmChatModelHelper
 import com.google.ai.edge.litertlm.Contents
 import dagger.Module
 import dagger.Provides

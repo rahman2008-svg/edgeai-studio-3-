@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.llmchat
+package com.nexvora.ai.ui.llmchat
 
 import androidx.hilt.navigation.compose.hiltViewModel
 import android.graphics.Bitmap
@@ -35,24 +35,24 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.google.ai.edge.gallery.GalleryEvent
-import com.google.ai.edge.gallery.R
-import com.google.ai.edge.gallery.data.BuiltInTaskId
-import com.google.ai.edge.gallery.data.Model
-import com.google.ai.edge.gallery.data.ModelCapability
-import com.google.ai.edge.gallery.data.RuntimeType
-import com.google.ai.edge.gallery.data.Task
-import com.google.ai.edge.gallery.firebaseAnalytics
-import com.google.ai.edge.gallery.ui.common.chat.ChatMessage
-import com.google.ai.edge.gallery.ui.common.chat.ChatMessageAudioClip
-import com.google.ai.edge.gallery.ui.common.chat.ChatMessageImage
-import com.google.ai.edge.gallery.ui.common.chat.ChatMessageText
-import com.google.ai.edge.gallery.ui.common.chat.ChatSide
-import com.google.ai.edge.gallery.ui.common.chat.ChatView
-import com.google.ai.edge.gallery.ui.common.chat.SendMessageTrigger
-import com.google.ai.edge.gallery.ui.modelmanager.ModelManagerViewModel
-import com.google.ai.edge.gallery.ui.theme.emptyStateContent
-import com.google.ai.edge.gallery.ui.theme.emptyStateTitle
+import com.nexvora.ai.GalleryEvent
+import com.nexvora.ai.R
+import com.nexvora.ai.data.BuiltInTaskId
+import com.nexvora.ai.data.Model
+import com.nexvora.ai.data.ModelCapability
+import com.nexvora.ai.data.RuntimeType
+import com.nexvora.ai.data.Task
+import com.nexvora.ai.firebaseAnalytics
+import com.nexvora.ai.ui.common.chat.ChatMessage
+import com.nexvora.ai.ui.common.chat.ChatMessageAudioClip
+import com.nexvora.ai.ui.common.chat.ChatMessageImage
+import com.nexvora.ai.ui.common.chat.ChatMessageText
+import com.nexvora.ai.ui.common.chat.ChatSide
+import com.nexvora.ai.ui.common.chat.ChatView
+import com.nexvora.ai.ui.common.chat.SendMessageTrigger
+import com.nexvora.ai.ui.modelmanager.ModelManagerViewModel
+import com.nexvora.ai.ui.theme.emptyStateContent
+import com.nexvora.ai.ui.theme.emptyStateTitle
 import com.google.ai.edge.litertlm.Contents
 import com.google.ai.edge.litertlm.Message
 

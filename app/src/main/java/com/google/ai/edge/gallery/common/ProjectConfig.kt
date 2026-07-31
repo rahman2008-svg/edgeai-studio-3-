@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.common
+package com.nexvora.ai.common
 
 import androidx.core.net.toUri
 import net.openid.appauth.AuthorizationServiceConfiguration

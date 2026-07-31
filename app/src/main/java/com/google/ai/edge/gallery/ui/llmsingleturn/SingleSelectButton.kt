@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.llmsingleturn
+package com.nexvora.ai.ui.llmsingleturn
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable

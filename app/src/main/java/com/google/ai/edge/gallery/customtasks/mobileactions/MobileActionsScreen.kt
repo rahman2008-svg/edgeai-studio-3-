@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.ai.edge.gallery.customtasks.mobileactions
+package com.nexvora.ai.customtasks.mobileactions
 
 import android.Manifest
 import android.content.pm.PackageManager
@@ -113,23 +113,23 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.content.ContextCompat
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import com.google.ai.edge.gallery.GalleryEvent
-import com.google.ai.edge.gallery.R
-import com.google.ai.edge.gallery.data.ModelDownloadStatusType
-import com.google.ai.edge.gallery.data.Task
-import com.google.ai.edge.gallery.firebaseAnalytics
-import com.google.ai.edge.gallery.ui.common.MarkdownText
-import com.google.ai.edge.gallery.ui.common.chat.ChatMessageWarning
-import com.google.ai.edge.gallery.ui.common.chat.MessageBodyLoading
-import com.google.ai.edge.gallery.ui.common.chat.MessageBodyWarning
-import com.google.ai.edge.gallery.ui.common.getTaskBgGradientColors
-import com.google.ai.edge.gallery.ui.common.getTaskIconColor
-import com.google.ai.edge.gallery.ui.common.textandvoiceinput.HoldToDictateViewModel
-import com.google.ai.edge.gallery.ui.common.textandvoiceinput.TextAndVoiceInput
-import com.google.ai.edge.gallery.ui.common.textandvoiceinput.VoiceRecognizerOverlay
-import com.google.ai.edge.gallery.ui.modelmanager.ModelInitializationStatus
-import com.google.ai.edge.gallery.ui.modelmanager.ModelInitializationStatusType
-import com.google.ai.edge.gallery.ui.modelmanager.ModelManagerViewModel
+import com.nexvora.ai.GalleryEvent
+import com.nexvora.ai.R
+import com.nexvora.ai.data.ModelDownloadStatusType
+import com.nexvora.ai.data.Task
+import com.nexvora.ai.firebaseAnalytics
+import com.nexvora.ai.ui.common.MarkdownText
+import com.nexvora.ai.ui.common.chat.ChatMessageWarning
+import com.nexvora.ai.ui.common.chat.MessageBodyLoading
+import com.nexvora.ai.ui.common.chat.MessageBodyWarning
+import com.nexvora.ai.ui.common.getTaskBgGradientColors
+import com.nexvora.ai.ui.common.getTaskIconColor
+import com.nexvora.ai.ui.common.textandvoiceinput.HoldToDictateViewModel
+import com.nexvora.ai.ui.common.textandvoiceinput.TextAndVoiceInput
+import com.nexvora.ai.ui.common.textandvoiceinput.VoiceRecognizerOverlay
+import com.nexvora.ai.ui.modelmanager.ModelInitializationStatus
+import com.nexvora.ai.ui.modelmanager.ModelInitializationStatusType
+import com.nexvora.ai.ui.modelmanager.ModelManagerViewModel
 import com.google.ai.edge.litertlm.ToolProvider
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.common
+package com.nexvora.ai.ui.common
 
 import android.os.Bundle
 import androidx.compose.foundation.layout.Arrangement
@@ -47,22 +47,22 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
-import com.google.ai.edge.gallery.BuildConfig
-import com.google.ai.edge.gallery.GalleryEvent
-import com.google.ai.edge.gallery.R
-import com.google.ai.edge.gallery.customtasks.agentchat.agentSkillTopK
-import com.google.ai.edge.gallery.customtasks.agentchat.agentSkillTopKAdjusted
-import com.google.ai.edge.gallery.data.BuiltInTaskId
-import com.google.ai.edge.gallery.data.ConfigKeys
-import com.google.ai.edge.gallery.data.Model
-import com.google.ai.edge.gallery.data.ModelCapability
-import com.google.ai.edge.gallery.data.ModelDownloadStatusType
-import com.google.ai.edge.gallery.data.RuntimeType
-import com.google.ai.edge.gallery.data.Task
-import com.google.ai.edge.gallery.data.convertValueToTargetType
-import com.google.ai.edge.gallery.firebaseAnalytics
-import com.google.ai.edge.gallery.ui.modelmanager.ModelInitializationStatusType
-import com.google.ai.edge.gallery.ui.modelmanager.ModelManagerViewModel
+import com.nexvora.ai.BuildConfig
+import com.nexvora.ai.GalleryEvent
+import com.nexvora.ai.R
+import com.nexvora.ai.customtasks.agentchat.agentSkillTopK
+import com.nexvora.ai.customtasks.agentchat.agentSkillTopKAdjusted
+import com.nexvora.ai.data.BuiltInTaskId
+import com.nexvora.ai.data.ConfigKeys
+import com.nexvora.ai.data.Model
+import com.nexvora.ai.data.ModelCapability
+import com.nexvora.ai.data.ModelDownloadStatusType
+import com.nexvora.ai.data.RuntimeType
+import com.nexvora.ai.data.Task
+import com.nexvora.ai.data.convertValueToTargetType
+import com.nexvora.ai.firebaseAnalytics
+import com.nexvora.ai.ui.modelmanager.ModelInitializationStatusType
+import com.nexvora.ai.ui.modelmanager.ModelManagerViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.common.chat
+package com.nexvora.ai.ui.common.chat
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
@@ -36,13 +36,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.google.ai.edge.gallery.R
-import com.google.ai.edge.gallery.data.Model
-import com.google.ai.edge.gallery.data.ModelDownloadStatusType
-import com.google.ai.edge.gallery.data.Task
-import com.google.ai.edge.gallery.ui.common.DownloadAndTryButton
-import com.google.ai.edge.gallery.ui.common.modelitem.calculateDownloadProgress
-import com.google.ai.edge.gallery.ui.modelmanager.ModelManagerViewModel
+import com.nexvora.ai.R
+import com.nexvora.ai.data.Model
+import com.nexvora.ai.data.ModelDownloadStatusType
+import com.nexvora.ai.data.Task
+import com.nexvora.ai.ui.common.DownloadAndTryButton
+import com.nexvora.ai.ui.common.modelitem.calculateDownloadProgress
+import com.nexvora.ai.ui.modelmanager.ModelManagerViewModel
 
 @Composable
 fun ModelDownloadStatusInfoPanel(

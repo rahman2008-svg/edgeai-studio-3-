@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.llmsingleturn
+package com.nexvora.ai.ui.llmsingleturn
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.google.ai.edge.gallery.common.processLlmResponse
-import com.google.ai.edge.gallery.data.Model
-import com.google.ai.edge.gallery.data.Task
-import com.google.ai.edge.gallery.runtime.runtimeHelper
+import com.nexvora.ai.common.processLlmResponse
+import com.nexvora.ai.data.Model
+import com.nexvora.ai.data.Task
+import com.nexvora.ai.runtime.runtimeHelper
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers
@@ -67,10 +67,10 @@ class LlmSingleTurnViewModel @Inject constructor() : ViewModel() {
 
       val supportImage =
         model.llmSupportImage &&
-          task.id == com.google.ai.edge.gallery.data.BuiltInTaskId.LLM_ASK_IMAGE
+          task.id == com.nexvora.ai.data.BuiltInTaskId.LLM_ASK_IMAGE
       val supportAudio =
         model.llmSupportAudio &&
-          task.id == com.google.ai.edge.gallery.data.BuiltInTaskId.LLM_ASK_AUDIO
+          task.id == com.nexvora.ai.data.BuiltInTaskId.LLM_ASK_AUDIO
       model.runtimeHelper.resetConversation(
         model = model,
         supportImage = supportImage,

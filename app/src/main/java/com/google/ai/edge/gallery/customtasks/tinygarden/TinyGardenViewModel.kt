@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.customtasks.tinygarden
+package com.nexvora.ai.customtasks.tinygarden
 
 import android.content.Context
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.google.ai.edge.gallery.R
-import com.google.ai.edge.gallery.data.BuiltInTaskId
-import com.google.ai.edge.gallery.data.DataStoreRepository
-import com.google.ai.edge.gallery.data.Model
-import com.google.ai.edge.gallery.ui.common.chat.ChatMessage
-import com.google.ai.edge.gallery.ui.common.chat.ChatMessageText
-import com.google.ai.edge.gallery.ui.common.chat.ChatMessageWarning
-import com.google.ai.edge.gallery.ui.common.chat.ChatSide
-import com.google.ai.edge.gallery.ui.llmchat.LlmChatModelHelper
-import com.google.ai.edge.gallery.ui.llmchat.LlmModelInstance
+import com.nexvora.ai.R
+import com.nexvora.ai.data.BuiltInTaskId
+import com.nexvora.ai.data.DataStoreRepository
+import com.nexvora.ai.data.Model
+import com.nexvora.ai.ui.common.chat.ChatMessage
+import com.nexvora.ai.ui.common.chat.ChatMessageText
+import com.nexvora.ai.ui.common.chat.ChatMessageWarning
+import com.nexvora.ai.ui.common.chat.ChatSide
+import com.nexvora.ai.ui.llmchat.LlmChatModelHelper
+import com.nexvora.ai.ui.llmchat.LlmModelInstance
 import com.google.ai.edge.litertlm.Content
 import com.google.ai.edge.litertlm.Contents
 import com.google.ai.edge.litertlm.ToolProvider

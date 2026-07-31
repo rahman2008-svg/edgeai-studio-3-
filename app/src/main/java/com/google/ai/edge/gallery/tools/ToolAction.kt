@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.tools
+package com.nexvora.ai.tools
 
 import com.squareup.moshi.JsonClass
 import kotlinx.coroutines.CompletableDeferred

@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.runtime
+package com.nexvora.ai.runtime
 
 import android.content.Context
 import android.graphics.Bitmap
-import com.google.ai.edge.gallery.data.Model
+import com.nexvora.ai.data.Model
 import com.google.ai.edge.litertlm.Contents
 import com.google.ai.edge.litertlm.Message
 import com.google.ai.edge.litertlm.ToolProvider

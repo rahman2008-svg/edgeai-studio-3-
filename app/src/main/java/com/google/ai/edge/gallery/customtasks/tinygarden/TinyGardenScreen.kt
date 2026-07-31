@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.ai.edge.gallery.customtasks.tinygarden
+package com.nexvora.ai.customtasks.tinygarden
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -91,23 +91,23 @@ import androidx.core.content.ContextCompat
 import androidx.core.net.toUri
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.webkit.WebViewAssetLoader
-import com.google.ai.edge.gallery.GalleryEvent
-import com.google.ai.edge.gallery.R
-import com.google.ai.edge.gallery.data.ConfigKeys
-import com.google.ai.edge.gallery.data.ModelDownloadStatusType
-import com.google.ai.edge.gallery.data.Task
-import com.google.ai.edge.gallery.data.ValueType
-import com.google.ai.edge.gallery.data.convertValueToTargetType
-import com.google.ai.edge.gallery.firebaseAnalytics
-import com.google.ai.edge.gallery.ui.common.chat.ChatMessageText
-import com.google.ai.edge.gallery.ui.common.chat.ChatMessageWarning
-import com.google.ai.edge.gallery.ui.common.chat.ChatSide
-import com.google.ai.edge.gallery.ui.common.getTaskBgGradientColors
-import com.google.ai.edge.gallery.ui.common.textandvoiceinput.HoldToDictateViewModel
-import com.google.ai.edge.gallery.ui.common.textandvoiceinput.TextAndVoiceInput
-import com.google.ai.edge.gallery.ui.common.textandvoiceinput.VoiceRecognizerOverlay
-import com.google.ai.edge.gallery.ui.modelmanager.ModelManagerViewModel
-import com.google.ai.edge.gallery.ui.theme.customColors
+import com.nexvora.ai.GalleryEvent
+import com.nexvora.ai.R
+import com.nexvora.ai.data.ConfigKeys
+import com.nexvora.ai.data.ModelDownloadStatusType
+import com.nexvora.ai.data.Task
+import com.nexvora.ai.data.ValueType
+import com.nexvora.ai.data.convertValueToTargetType
+import com.nexvora.ai.firebaseAnalytics
+import com.nexvora.ai.ui.common.chat.ChatMessageText
+import com.nexvora.ai.ui.common.chat.ChatMessageWarning
+import com.nexvora.ai.ui.common.chat.ChatSide
+import com.nexvora.ai.ui.common.getTaskBgGradientColors
+import com.nexvora.ai.ui.common.textandvoiceinput.HoldToDictateViewModel
+import com.nexvora.ai.ui.common.textandvoiceinput.TextAndVoiceInput
+import com.nexvora.ai.ui.common.textandvoiceinput.VoiceRecognizerOverlay
+import com.nexvora.ai.ui.modelmanager.ModelManagerViewModel
+import com.nexvora.ai.ui.theme.customColors
 import com.google.ai.edge.litertlm.ToolProvider
 import com.google.common.io.BaseEncoding
 import java.security.MessageDigest

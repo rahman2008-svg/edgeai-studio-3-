@@ -20,19 +20,19 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.common.chat
+package com.nexvora.ai.ui.common.chat
 
 // import androidx.compose.ui.tooling.preview.Preview
-// import com.google.ai.edge.gallery.ui.theme.GalleryTheme
+// import com.nexvora.ai.ui.theme.GalleryTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
-import com.google.ai.edge.gallery.R
-import com.google.ai.edge.gallery.data.Config
-import com.google.ai.edge.gallery.data.ConfigKeys
-import com.google.ai.edge.gallery.data.NumberSliderConfig
-import com.google.ai.edge.gallery.data.ValueType
-import com.google.ai.edge.gallery.data.convertValueToTargetType
-import com.google.ai.edge.gallery.ui.common.ConfigDialog
+import com.nexvora.ai.R
+import com.nexvora.ai.data.Config
+import com.nexvora.ai.data.ConfigKeys
+import com.nexvora.ai.data.NumberSliderConfig
+import com.nexvora.ai.data.ValueType
+import com.nexvora.ai.data.convertValueToTargetType
+import com.nexvora.ai.ui.common.ConfigDialog
 
 private const val DEFAULT_BENCHMARK_WARM_UP_ITERATIONS = 50f
 private const val DEFAULT_BENCHMARK_ITERATIONS = 200f

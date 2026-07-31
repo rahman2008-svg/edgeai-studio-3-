@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.worker
+package com.nexvora.ai.worker
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -28,24 +28,24 @@ import androidx.work.CoroutineWorker
 import androidx.work.Data
 import androidx.work.ForegroundInfo
 import androidx.work.WorkerParameters
-import com.google.ai.edge.gallery.data.KEY_MODEL_COMMIT_HASH
-import com.google.ai.edge.gallery.data.KEY_MODEL_DOWNLOAD_ACCESS_TOKEN
-import com.google.ai.edge.gallery.data.KEY_MODEL_DOWNLOAD_ERROR_MESSAGE
-import com.google.ai.edge.gallery.data.KEY_MODEL_DOWNLOAD_FILE_NAME
-import com.google.ai.edge.gallery.data.KEY_MODEL_DOWNLOAD_MODEL_DIR
-import com.google.ai.edge.gallery.data.KEY_MODEL_DOWNLOAD_RATE
-import com.google.ai.edge.gallery.data.KEY_MODEL_DOWNLOAD_RECEIVED_BYTES
-import com.google.ai.edge.gallery.data.KEY_MODEL_DOWNLOAD_REMAINING_MS
-import com.google.ai.edge.gallery.data.KEY_MODEL_EXTRA_DATA_DOWNLOAD_FILE_NAMES
-import com.google.ai.edge.gallery.data.KEY_MODEL_EXTRA_DATA_URLS
-import com.google.ai.edge.gallery.data.KEY_MODEL_IS_IMPORTED
-import com.google.ai.edge.gallery.data.KEY_MODEL_IS_ZIP
-import com.google.ai.edge.gallery.data.KEY_MODEL_NAME
-import com.google.ai.edge.gallery.data.KEY_MODEL_START_UNZIPPING
-import com.google.ai.edge.gallery.data.KEY_MODEL_TOTAL_BYTES
-import com.google.ai.edge.gallery.data.KEY_MODEL_UNZIPPED_DIR
-import com.google.ai.edge.gallery.data.KEY_MODEL_URL
-import com.google.ai.edge.gallery.data.TMP_FILE_EXT
+import com.nexvora.ai.data.KEY_MODEL_COMMIT_HASH
+import com.nexvora.ai.data.KEY_MODEL_DOWNLOAD_ACCESS_TOKEN
+import com.nexvora.ai.data.KEY_MODEL_DOWNLOAD_ERROR_MESSAGE
+import com.nexvora.ai.data.KEY_MODEL_DOWNLOAD_FILE_NAME
+import com.nexvora.ai.data.KEY_MODEL_DOWNLOAD_MODEL_DIR
+import com.nexvora.ai.data.KEY_MODEL_DOWNLOAD_RATE
+import com.nexvora.ai.data.KEY_MODEL_DOWNLOAD_RECEIVED_BYTES
+import com.nexvora.ai.data.KEY_MODEL_DOWNLOAD_REMAINING_MS
+import com.nexvora.ai.data.KEY_MODEL_EXTRA_DATA_DOWNLOAD_FILE_NAMES
+import com.nexvora.ai.data.KEY_MODEL_EXTRA_DATA_URLS
+import com.nexvora.ai.data.KEY_MODEL_IS_IMPORTED
+import com.nexvora.ai.data.KEY_MODEL_IS_ZIP
+import com.nexvora.ai.data.KEY_MODEL_NAME
+import com.nexvora.ai.data.KEY_MODEL_START_UNZIPPING
+import com.nexvora.ai.data.KEY_MODEL_TOTAL_BYTES
+import com.nexvora.ai.data.KEY_MODEL_UNZIPPED_DIR
+import com.nexvora.ai.data.KEY_MODEL_URL
+import com.nexvora.ai.data.TMP_FILE_EXT
 import java.io.BufferedInputStream
 import java.io.File
 import java.io.FileInputStream
@@ -353,7 +353,7 @@ class DownloadWorker(context: Context, params: WorkerParameters) :
     val content = "Downloading in progress: $progress%"
 
     val intent =
-      Intent(applicationContext, Class.forName("com.google.ai.edge.gallery.MainActivity")).apply {
+      Intent(applicationContext, Class.forName("com.nexvora.ai.MainActivity")).apply {
         flags = Intent.FLAG_ACTIVITY_SINGLE_TOP
       }
     val pendingIntent =

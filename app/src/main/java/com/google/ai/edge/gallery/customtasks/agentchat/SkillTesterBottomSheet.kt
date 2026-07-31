@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.customtasks.agentchat
+package com.nexvora.ai.customtasks.agentchat
 
 import android.graphics.Bitmap
 import androidx.compose.foundation.Image
@@ -48,15 +48,15 @@ import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.google.ai.edge.gallery.R
-import com.google.ai.edge.gallery.proto.Skill
-import com.google.ai.edge.gallery.skills.getJsSkillUrl
-import com.google.ai.edge.gallery.skills.getJsSkillWebviewUrl
-import com.google.ai.edge.gallery.tools.CallJsSkillResult
-import com.google.ai.edge.gallery.tools.CallJsSkillResultWebview
-import com.google.ai.edge.gallery.tools.CallJsToolAction
-import com.google.ai.edge.gallery.ui.common.chat.ChatMessageWebView
-import com.google.ai.edge.gallery.ui.common.chat.MessageBodyWebview
+import com.nexvora.ai.R
+import com.nexvora.ai.proto.Skill
+import com.nexvora.ai.skills.getJsSkillUrl
+import com.nexvora.ai.skills.getJsSkillWebviewUrl
+import com.nexvora.ai.tools.CallJsSkillResult
+import com.nexvora.ai.tools.CallJsSkillResultWebview
+import com.nexvora.ai.tools.CallJsToolAction
+import com.nexvora.ai.ui.common.chat.ChatMessageWebView
+import com.nexvora.ai.ui.common.chat.MessageBodyWebview
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
 import kotlinx.coroutines.Dispatchers

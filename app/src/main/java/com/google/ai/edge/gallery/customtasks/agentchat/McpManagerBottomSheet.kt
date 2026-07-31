@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.customtasks.agentchat
+package com.nexvora.ai.customtasks.agentchat
 
 import android.os.Bundle
 import android.util.Log
@@ -90,15 +90,15 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.google.ai.edge.gallery.GalleryEvent
-import com.google.ai.edge.gallery.R
-import com.google.ai.edge.gallery.common.clearFocusOnKeyboardDismiss
-import com.google.ai.edge.gallery.firebaseAnalytics
-import com.google.ai.edge.gallery.mcp.McpServerState
-import com.google.ai.edge.gallery.ui.common.ClickableLink
-import com.google.ai.edge.gallery.ui.common.SmallFilledTonalButton
-import com.google.ai.edge.gallery.ui.common.SmallOutlinedButton
-import com.google.ai.edge.gallery.ui.theme.customColors
+import com.nexvora.ai.GalleryEvent
+import com.nexvora.ai.R
+import com.nexvora.ai.common.clearFocusOnKeyboardDismiss
+import com.nexvora.ai.firebaseAnalytics
+import com.nexvora.ai.mcp.McpServerState
+import com.nexvora.ai.ui.common.ClickableLink
+import com.nexvora.ai.ui.common.SmallFilledTonalButton
+import com.nexvora.ai.ui.common.SmallOutlinedButton
+import com.nexvora.ai.ui.theme.customColors
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 

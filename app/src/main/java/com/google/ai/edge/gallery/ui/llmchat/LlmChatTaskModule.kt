@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.llmchat
+package com.nexvora.ai.ui.llmchat
 
 import android.content.Context
 import androidx.compose.foundation.layout.Arrangement
@@ -38,17 +38,17 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import com.google.ai.edge.gallery.R
-import com.google.ai.edge.gallery.customtasks.common.CustomTask
-import com.google.ai.edge.gallery.customtasks.common.CustomTaskDataForBuiltinTask
-import com.google.ai.edge.gallery.data.BuiltInTaskId
-import com.google.ai.edge.gallery.data.Category
-import com.google.ai.edge.gallery.data.Model
-import com.google.ai.edge.gallery.data.RuntimeType
-import com.google.ai.edge.gallery.data.Task
-import com.google.ai.edge.gallery.runtime.runtimeHelper
-import com.google.ai.edge.gallery.ui.theme.emptyStateContent
-import com.google.ai.edge.gallery.ui.theme.emptyStateTitle
+import com.nexvora.ai.R
+import com.nexvora.ai.customtasks.common.CustomTask
+import com.nexvora.ai.customtasks.common.CustomTaskDataForBuiltinTask
+import com.nexvora.ai.data.BuiltInTaskId
+import com.nexvora.ai.data.Category
+import com.nexvora.ai.data.Model
+import com.nexvora.ai.data.RuntimeType
+import com.nexvora.ai.data.Task
+import com.nexvora.ai.runtime.runtimeHelper
+import com.nexvora.ai.ui.theme.emptyStateContent
+import com.nexvora.ai.ui.theme.emptyStateTitle
 import com.google.ai.edge.litertlm.Contents
 import dagger.Module
 import dagger.Provides

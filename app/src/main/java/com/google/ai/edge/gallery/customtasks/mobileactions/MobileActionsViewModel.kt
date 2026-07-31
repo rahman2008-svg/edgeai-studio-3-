@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.ai.edge.gallery.customtasks.mobileactions
+package com.nexvora.ai.customtasks.mobileactions
 
 import android.content.Context
 import android.content.Intent
@@ -26,14 +26,14 @@ import android.util.Log
 import androidx.core.net.toUri
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.google.ai.edge.gallery.R
-import com.google.ai.edge.gallery.data.BuiltInTaskId
-import com.google.ai.edge.gallery.data.Model
-import com.google.ai.edge.gallery.ui.llmchat.LlmChatModelHelper
-import com.google.ai.edge.gallery.ui.llmchat.LlmModelInstance
-import com.google.ai.edge.gallery.ui.modelmanager.ModelInitializationStatus
-import com.google.ai.edge.gallery.ui.modelmanager.ModelInitializationStatusType
-import com.google.ai.edge.gallery.ui.modelmanager.ModelManagerViewModel
+import com.nexvora.ai.R
+import com.nexvora.ai.data.BuiltInTaskId
+import com.nexvora.ai.data.Model
+import com.nexvora.ai.ui.llmchat.LlmChatModelHelper
+import com.nexvora.ai.ui.llmchat.LlmModelInstance
+import com.nexvora.ai.ui.modelmanager.ModelInitializationStatus
+import com.nexvora.ai.ui.modelmanager.ModelInitializationStatusType
+import com.nexvora.ai.ui.modelmanager.ModelManagerViewModel
 import com.google.ai.edge.litertlm.Content
 import com.google.ai.edge.litertlm.Contents
 import com.google.ai.edge.litertlm.ToolProvider

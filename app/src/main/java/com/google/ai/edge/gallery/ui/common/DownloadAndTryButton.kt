@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.common
+package com.nexvora.ai.ui.common
 
 import android.content.Intent
 import android.util.Log
@@ -74,16 +74,16 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.net.toUri
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import com.google.ai.edge.gallery.R
-import com.google.ai.edge.gallery.data.Model
-import com.google.ai.edge.gallery.data.ModelDownloadStatusType
-import com.google.ai.edge.gallery.data.RuntimeType
-import com.google.ai.edge.gallery.data.Task
-import com.google.ai.edge.gallery.ui.common.tos.GemmaTermsOfUseDialog
-import com.google.ai.edge.gallery.ui.common.tos.TosViewModel
-import com.google.ai.edge.gallery.ui.modelmanager.ModelManagerViewModel
-import com.google.ai.edge.gallery.ui.modelmanager.TokenRequestResultType
-import com.google.ai.edge.gallery.ui.modelmanager.TokenStatus
+import com.nexvora.ai.R
+import com.nexvora.ai.data.Model
+import com.nexvora.ai.data.ModelDownloadStatusType
+import com.nexvora.ai.data.RuntimeType
+import com.nexvora.ai.data.Task
+import com.nexvora.ai.ui.common.tos.GemmaTermsOfUseDialog
+import com.nexvora.ai.ui.common.tos.TosViewModel
+import com.nexvora.ai.ui.modelmanager.ModelManagerViewModel
+import com.nexvora.ai.ui.modelmanager.TokenRequestResultType
+import com.nexvora.ai.ui.modelmanager.TokenStatus
 import java.net.HttpURLConnection
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

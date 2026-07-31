@@ -14,20 +14,20 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.data
+package com.nexvora.ai.data
 
 import androidx.datastore.core.DataStore
-import com.google.ai.edge.gallery.proto.AccessTokenData
-import com.google.ai.edge.gallery.proto.BenchmarkResult
-import com.google.ai.edge.gallery.proto.BenchmarkResults
-import com.google.ai.edge.gallery.proto.Cutout
-import com.google.ai.edge.gallery.proto.CutoutCollection
-import com.google.ai.edge.gallery.proto.ImportedModel
-import com.google.ai.edge.gallery.proto.Settings
-import com.google.ai.edge.gallery.proto.Skill
-import com.google.ai.edge.gallery.proto.Skills
-import com.google.ai.edge.gallery.proto.Theme
-import com.google.ai.edge.gallery.proto.UserData
+import com.nexvora.ai.proto.AccessTokenData
+import com.nexvora.ai.proto.BenchmarkResult
+import com.nexvora.ai.proto.BenchmarkResults
+import com.nexvora.ai.proto.Cutout
+import com.nexvora.ai.proto.CutoutCollection
+import com.nexvora.ai.proto.ImportedModel
+import com.nexvora.ai.proto.Settings
+import com.nexvora.ai.proto.Skill
+import com.nexvora.ai.proto.Skills
+import com.nexvora.ai.proto.Theme
+import com.nexvora.ai.proto.UserData
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 

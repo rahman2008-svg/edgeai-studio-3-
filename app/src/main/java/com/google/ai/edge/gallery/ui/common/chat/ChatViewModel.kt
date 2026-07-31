@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.common.chat
+package com.nexvora.ai.ui.common.chat
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -23,14 +23,14 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.datastore.core.DataStore
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.google.ai.edge.gallery.common.processLlmResponse
-import com.google.ai.edge.gallery.data.ConfigKeys
-import com.google.ai.edge.gallery.data.Model
-import com.google.ai.edge.gallery.proto.AudioMessageProto
-import com.google.ai.edge.gallery.proto.ChatMessageProto
-import com.google.ai.edge.gallery.proto.ChatSessionProto
-import com.google.ai.edge.gallery.proto.ChatSideProto
-import com.google.ai.edge.gallery.proto.UserData
+import com.nexvora.ai.common.processLlmResponse
+import com.nexvora.ai.data.ConfigKeys
+import com.nexvora.ai.data.Model
+import com.nexvora.ai.proto.AudioMessageProto
+import com.nexvora.ai.proto.ChatMessageProto
+import com.nexvora.ai.proto.ChatSessionProto
+import com.nexvora.ai.proto.ChatSideProto
+import com.nexvora.ai.proto.UserData
 import java.io.File
 import java.io.FileOutputStream
 import java.util.UUID

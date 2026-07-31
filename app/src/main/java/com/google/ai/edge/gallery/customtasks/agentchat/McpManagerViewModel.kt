@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.customtasks.agentchat
+package com.nexvora.ai.customtasks.agentchat
 
 import android.os.Bundle
 import android.util.Log
 import androidx.datastore.core.DataStore
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.google.ai.edge.gallery.BuildConfig
-import com.google.ai.edge.gallery.GalleryEvent
-import com.google.ai.edge.gallery.firebaseAnalytics
-import com.google.ai.edge.gallery.mcp.McpServerState
-import com.google.ai.edge.gallery.mcp.McpServersProvider
-import com.google.ai.edge.gallery.proto.McpAuth
-import com.google.ai.edge.gallery.proto.McpServer
-import com.google.ai.edge.gallery.proto.McpServers
-import com.google.ai.edge.gallery.proto.McpTool
-import com.google.ai.edge.gallery.proto.UserData
+import com.nexvora.ai.BuildConfig
+import com.nexvora.ai.GalleryEvent
+import com.nexvora.ai.firebaseAnalytics
+import com.nexvora.ai.mcp.McpServerState
+import com.nexvora.ai.mcp.McpServersProvider
+import com.nexvora.ai.proto.McpAuth
+import com.nexvora.ai.proto.McpServer
+import com.nexvora.ai.proto.McpServers
+import com.nexvora.ai.proto.McpTool
+import com.nexvora.ai.proto.UserData
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.android.Android

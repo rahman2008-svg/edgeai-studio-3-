@@ -1,4 +1,4 @@
-package com.google.ai.edge.gallery.ui.nexora
+package com.nexvora.ai.ui.nexora
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn

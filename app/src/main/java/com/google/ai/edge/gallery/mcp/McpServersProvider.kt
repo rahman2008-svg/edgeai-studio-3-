@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.mcp
+package com.nexvora.ai.mcp
 
-import com.google.ai.edge.gallery.proto.McpServer
+import com.nexvora.ai.proto.McpServer
 import io.modelcontextprotocol.kotlin.sdk.client.Client
 
 data class McpServerState(val mcpServer: McpServer, val client: Client?, val error: String? = null)

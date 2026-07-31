@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.ai.edge.gallery.customtasks.tinygarden
+package com.nexvora.ai.customtasks.tinygarden
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -43,18 +43,18 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.google.ai.edge.gallery.R
-import com.google.ai.edge.gallery.data.Task
-import com.google.ai.edge.gallery.ui.common.chat.ChatMessageError
-import com.google.ai.edge.gallery.ui.common.chat.ChatMessageText
-import com.google.ai.edge.gallery.ui.common.chat.ChatMessageWarning
-import com.google.ai.edge.gallery.ui.common.chat.ChatSide
-import com.google.ai.edge.gallery.ui.common.chat.MessageBodyError
-import com.google.ai.edge.gallery.ui.common.chat.MessageBodyText
-import com.google.ai.edge.gallery.ui.common.chat.MessageBodyWarning
-import com.google.ai.edge.gallery.ui.common.chat.MessageBubbleShape
-import com.google.ai.edge.gallery.ui.common.chat.MessageSender
-import com.google.ai.edge.gallery.ui.theme.customColors
+import com.nexvora.ai.R
+import com.nexvora.ai.data.Task
+import com.nexvora.ai.ui.common.chat.ChatMessageError
+import com.nexvora.ai.ui.common.chat.ChatMessageText
+import com.nexvora.ai.ui.common.chat.ChatMessageWarning
+import com.nexvora.ai.ui.common.chat.ChatSide
+import com.nexvora.ai.ui.common.chat.MessageBodyError
+import com.nexvora.ai.ui.common.chat.MessageBodyText
+import com.nexvora.ai.ui.common.chat.MessageBodyWarning
+import com.nexvora.ai.ui.common.chat.MessageBubbleShape
+import com.nexvora.ai.ui.common.chat.MessageSender
+import com.nexvora.ai.ui.theme.customColors
 
 /** A panel to show the conversation history. */
 @Composable

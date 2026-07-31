@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.ai.edge.gallery.notifications
+package com.nexvora.ai.notifications
 
 import android.app.PendingIntent
 import android.content.Context
@@ -44,7 +44,7 @@ object NotificationPendingIntentHelper {
     channelName: String,
   ): PendingIntent {
     val receiverClass =
-      Class.forName("com.google.ai.edge.gallery.notifications.NotificationReceiver")
+      Class.forName("com.nexvora.ai.notifications.NotificationReceiver")
     val intent =
       Intent(context, receiverClass).apply {
         putExtra(EXTRA_ID, id)

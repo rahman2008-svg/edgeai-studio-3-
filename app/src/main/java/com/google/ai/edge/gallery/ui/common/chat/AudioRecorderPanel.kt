@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.common.chat
+package com.nexvora.ai.ui.common.chat
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -60,13 +60,13 @@ import androidx.compose.ui.semantics.LiveRegionMode
 import androidx.compose.ui.semantics.liveRegion
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
-import com.google.ai.edge.gallery.R
-import com.google.ai.edge.gallery.common.calculatePeakAmplitude
-import com.google.ai.edge.gallery.data.MAX_AUDIO_CLIP_DURATION_SEC
-import com.google.ai.edge.gallery.data.SAMPLE_RATE
-import com.google.ai.edge.gallery.data.Task
-import com.google.ai.edge.gallery.ui.common.getTaskIconColor
-import com.google.ai.edge.gallery.ui.theme.customColors
+import com.nexvora.ai.R
+import com.nexvora.ai.common.calculatePeakAmplitude
+import com.nexvora.ai.data.MAX_AUDIO_CLIP_DURATION_SEC
+import com.nexvora.ai.data.SAMPLE_RATE
+import com.nexvora.ai.data.Task
+import com.nexvora.ai.ui.common.getTaskIconColor
+import com.nexvora.ai.ui.theme.customColors
 import java.io.ByteArrayOutputStream
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.coroutineScope

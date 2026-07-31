@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.modelmanager
+package com.nexvora.ai.ui.modelmanager
 
 import android.content.Context
 import android.content.Intent
@@ -91,15 +91,15 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
-import com.google.ai.edge.gallery.R
-import com.google.ai.edge.gallery.data.Model
-import com.google.ai.edge.gallery.data.Task
-import com.google.ai.edge.gallery.data.supportModelBenchmark
-import com.google.ai.edge.gallery.proto.ImportedModel
-import com.google.ai.edge.gallery.ui.common.TaskIcon
-import com.google.ai.edge.gallery.ui.common.buildTrackableUrlAnnotatedString
-import com.google.ai.edge.gallery.ui.common.modelitem.ModelItem
-import com.google.ai.edge.gallery.ui.common.tos.TosViewModel
+import com.nexvora.ai.R
+import com.nexvora.ai.data.Model
+import com.nexvora.ai.data.Task
+import com.nexvora.ai.data.supportModelBenchmark
+import com.nexvora.ai.proto.ImportedModel
+import com.nexvora.ai.ui.common.TaskIcon
+import com.nexvora.ai.ui.common.buildTrackableUrlAnnotatedString
+import com.nexvora.ai.ui.common.modelitem.ModelItem
+import com.nexvora.ai.ui.common.tos.TosViewModel
 import kotlin.text.endsWith
 import kotlin.text.lowercase
 import kotlinx.coroutines.delay

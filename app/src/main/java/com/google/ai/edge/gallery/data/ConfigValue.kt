@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.data
+package com.nexvora.ai.data
 
 // @Serializable(with = ConfigValueSerializer::class)
 sealed class ConfigValue {

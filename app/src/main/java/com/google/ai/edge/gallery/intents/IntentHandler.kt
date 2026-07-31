@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.ai.edge.gallery.intents
+package com.nexvora.ai.intents
 
 import android.Manifest
 import android.content.ContentUris
@@ -26,8 +26,8 @@ import android.provider.CalendarContract.Instances
 import android.util.Log
 import androidx.core.content.ContextCompat.checkSelfPermission
 import androidx.core.net.toUri
-import com.google.ai.edge.gallery.notifications.NotificationScheduleManagerEntryPoint
-import com.google.ai.edge.gallery.proto.ScheduledNotification
+import com.nexvora.ai.notifications.NotificationScheduleManagerEntryPoint
+import com.nexvora.ai.proto.ScheduledNotification
 import com.squareup.moshi.JsonClass
 import com.squareup.moshi.Moshi
 import dagger.hilt.android.EntryPointAccessors
@@ -314,7 +314,7 @@ object IntentHandler {
           notificationProtoBuilder.setDeeplink(params.deeplink)
         } else if (params.task_id != null && params.model_name != null) {
           val uri =
-            "com.google.ai.edge.gallery://model/${params.task_id}/${params.model_name}"
+            "com.nexvora.ai://model/${params.task_id}/${params.model_name}"
               .toUri()
               .buildUpon()
               .appendQueryParameter("query", params.message)
@@ -324,7 +324,7 @@ object IntentHandler {
           notificationProtoBuilder.setDeeplink(uri)
         } else if (params.task_id != null) {
           val uri =
-            "com.google.ai.edge.gallery://${params.task_id}/"
+            "com.nexvora.ai://${params.task_id}/"
               .toUri()
               .buildUpon()
               .appendQueryParameter("query", params.message)
@@ -334,7 +334,7 @@ object IntentHandler {
           notificationProtoBuilder.setDeeplink(uri)
         } else {
           val fallbackUri =
-            "com.google.ai.edge.gallery://llm_agent_chat/"
+            "com.nexvora.ai://llm_agent_chat/"
               .toUri()
               .buildUpon()
               .appendQueryParameter("query", params.message)

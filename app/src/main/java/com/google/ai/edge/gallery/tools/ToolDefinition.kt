@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.tools
+package com.nexvora.ai.tools
 
 import com.google.ai.edge.litertlm.ToolSet
 import kotlinx.coroutines.channels.SendChannel

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.home
+package com.nexvora.ai.ui.home
 
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import android.app.UiModeManager
@@ -89,14 +89,14 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
-import com.google.ai.edge.gallery.BuildConfig
-import com.google.ai.edge.gallery.R
-import com.google.ai.edge.gallery.proto.Theme
-import com.google.ai.edge.gallery.ui.common.ClickableLink
-import com.google.ai.edge.gallery.ui.common.tos.AppTosDialog
-import com.google.ai.edge.gallery.ui.modelmanager.ModelManagerViewModel
-import com.google.ai.edge.gallery.ui.theme.ThemeSettings
-import com.google.ai.edge.gallery.ui.theme.labelSmallNarrow
+import com.nexvora.ai.BuildConfig
+import com.nexvora.ai.R
+import com.nexvora.ai.proto.Theme
+import com.nexvora.ai.ui.common.ClickableLink
+import com.nexvora.ai.ui.common.tos.AppTosDialog
+import com.nexvora.ai.ui.modelmanager.ModelManagerViewModel
+import com.nexvora.ai.ui.theme.ThemeSettings
+import com.nexvora.ai.ui.theme.labelSmallNarrow
 import java.time.Instant
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter

@@ -20,7 +20,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.common.chat
+package com.nexvora.ai.ui.common.chat
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -64,11 +64,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.google.ai.edge.gallery.R
+import com.nexvora.ai.R
 
 @Composable
 fun ChatHistorySideSheetContent(
-  history: List<com.google.ai.edge.gallery.proto.ChatSessionProto>,
+  history: List<com.nexvora.ai.proto.ChatSessionProto>,
   onHistoryItemClicked: (String) -> Unit,
   onHistoryItemDeleted: (String) -> Unit,
   onHistoryItemsDeleteAll: () -> Unit,

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.data
+package com.nexvora.ai.data
 
 import android.Manifest
 import android.app.NotificationChannel
@@ -36,11 +36,11 @@ import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.OutOfQuotaPolicy
 import androidx.work.WorkInfo
 import androidx.work.WorkManager
-import com.google.ai.edge.gallery.AppLifecycleProvider
-import com.google.ai.edge.gallery.GalleryEvent
-import com.google.ai.edge.gallery.R
-import com.google.ai.edge.gallery.firebaseAnalytics
-import com.google.ai.edge.gallery.worker.DownloadWorker
+import com.nexvora.ai.AppLifecycleProvider
+import com.nexvora.ai.GalleryEvent
+import com.nexvora.ai.R
+import com.nexvora.ai.firebaseAnalytics
+import com.nexvora.ai.worker.DownloadWorker
 import java.util.UUID
 import java.util.concurrent.Executors
 
@@ -300,7 +300,7 @@ class DefaultDownloadRepository(
     // Download from global model manager. Open the global model manager screen.
     else if (taskId == DOWNLOAD_FROM_GLOBAL_MODEL_MANAGER_TASK_ID) {
       intent =
-        Intent(Intent.ACTION_VIEW, "com.google.ai.edge.gallery://global_model_manager".toUri())
+        Intent(Intent.ACTION_VIEW, "com.nexvora.ai://global_model_manager".toUri())
           .apply { flags = Intent.FLAG_ACTIVITY_NEW_TASK }
     } else {
 
@@ -308,7 +308,7 @@ class DefaultDownloadRepository(
       intent =
         Intent(
             Intent.ACTION_VIEW,
-            "com.google.ai.edge.gallery://model/$taskId/${modelName}".toUri(),
+            "com.nexvora.ai://model/$taskId/${modelName}".toUri(),
           )
           .apply { flags = Intent.FLAG_ACTIVITY_NEW_TASK }
     }

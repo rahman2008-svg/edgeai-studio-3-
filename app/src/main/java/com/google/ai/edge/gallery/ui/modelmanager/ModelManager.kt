@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.modelmanager
+package com.nexvora.ai.ui.modelmanager
 
 // import androidx.compose.ui.tooling.preview.Preview
-// import com.google.ai.edge.gallery.ui.preview.PreviewModelManagerViewModel
-// import com.google.ai.edge.gallery.ui.preview.TASK_TEST1
-// import com.google.ai.edge.gallery.ui.theme.GalleryTheme
+// import com.nexvora.ai.ui.preview.PreviewModelManagerViewModel
+// import com.nexvora.ai.ui.preview.TASK_TEST1
+// import com.nexvora.ai.ui.theme.GalleryTheme
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.fillMaxSize
@@ -31,11 +31,11 @@ import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import com.google.ai.edge.gallery.GalleryTopAppBar
-import com.google.ai.edge.gallery.data.AppBarAction
-import com.google.ai.edge.gallery.data.AppBarActionType
-import com.google.ai.edge.gallery.data.Model
-import com.google.ai.edge.gallery.data.Task
+import com.nexvora.ai.GalleryTopAppBar
+import com.nexvora.ai.data.AppBarAction
+import com.nexvora.ai.data.AppBarActionType
+import com.nexvora.ai.data.Model
+import com.nexvora.ai.data.Task
 
 /** A screen to manage models. */
 @OptIn(ExperimentalMaterial3Api::class)

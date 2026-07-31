@@ -14,18 +14,18 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.customtasks.examplecustomtask
+package com.nexvora.ai.customtasks.examplecustomtask
 
 import android.content.Context
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.TextFields
 import androidx.compose.runtime.Composable
-import com.google.ai.edge.gallery.customtasks.common.CustomTask
-import com.google.ai.edge.gallery.customtasks.common.CustomTaskData
-import com.google.ai.edge.gallery.data.CategoryInfo
-import com.google.ai.edge.gallery.data.Model
-import com.google.ai.edge.gallery.data.Task
-import com.google.ai.edge.gallery.ui.modelmanager.ModelManagerViewModel
+import com.nexvora.ai.customtasks.common.CustomTask
+import com.nexvora.ai.customtasks.common.CustomTaskData
+import com.nexvora.ai.data.CategoryInfo
+import com.nexvora.ai.data.Model
+import com.nexvora.ai.data.Task
+import com.nexvora.ai.ui.modelmanager.ModelManagerViewModel
 import com.google.ai.edge.litertlm.Contents
 import java.io.File
 import javax.inject.Inject

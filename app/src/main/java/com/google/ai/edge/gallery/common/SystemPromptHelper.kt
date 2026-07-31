@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.common
+package com.nexvora.ai.common
 
-import com.google.ai.edge.gallery.data.SystemPromptRepository
-import com.google.ai.edge.gallery.data.Task
+import com.nexvora.ai.data.SystemPromptRepository
+import com.nexvora.ai.data.Task
 import kotlinx.coroutines.flow.firstOrNull
 
 /** Helper object for system prompt retrieval and compilation. */

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery
+package com.nexvora.ai
 
 import android.util.Log
 import com.google.firebase.Firebase

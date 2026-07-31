@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.common.chat
+package com.nexvora.ai.ui.common.chat
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -42,10 +42,10 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.google.ai.edge.gallery.data.convertValueToTargetType
-import com.google.ai.edge.gallery.data.getConfigValueString
-import com.google.ai.edge.gallery.ui.theme.bodySmallNarrow
-import com.google.ai.edge.gallery.ui.theme.titleSmaller
+import com.nexvora.ai.data.convertValueToTargetType
+import com.nexvora.ai.data.getConfigValueString
+import com.nexvora.ai.ui.theme.bodySmallNarrow
+import com.nexvora.ai.ui.theme.titleSmaller
 
 private data class ConfigRowData(
   val label: String,

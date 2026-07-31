@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.home
+package com.nexvora.ai.ui.home
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.tween

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.customtasks.agentchat
+package com.nexvora.ai.customtasks.agentchat
 
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
@@ -22,7 +22,7 @@ import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
-import com.google.ai.edge.gallery.R
+import com.nexvora.ai.R
 
 @Composable
 fun AddSkillDisclaimerDialog(onDismiss: () -> Unit, onConfirm: () -> Unit) {

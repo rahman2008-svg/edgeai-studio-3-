@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.common
+package com.nexvora.ai.common
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -37,9 +37,9 @@ import androidx.compose.ui.focus.onFocusEvent
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.exifinterface.media.ExifInterface
-import com.google.ai.edge.gallery.GalleryEvent
-import com.google.ai.edge.gallery.data.SAMPLE_RATE
-import com.google.ai.edge.gallery.firebaseAnalytics
+import com.nexvora.ai.GalleryEvent
+import com.nexvora.ai.data.SAMPLE_RATE
+import com.nexvora.ai.firebaseAnalytics
 import com.google.gson.Gson
 import com.google.gson.JsonObject
 import com.google.gson.JsonParser

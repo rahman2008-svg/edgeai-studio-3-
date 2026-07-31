@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.benchmark
+package com.nexvora.ai.ui.benchmark
 
 import android.content.ClipData
 import androidx.activity.compose.BackHandler
@@ -95,14 +95,14 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.google.ai.edge.gallery.R
-import com.google.ai.edge.gallery.proto.LlmBenchmarkResult
-import com.google.ai.edge.gallery.proto.ValueSeries
-import com.google.ai.edge.gallery.ui.common.Accordions
-import com.google.ai.edge.gallery.ui.common.MarkdownText
-import com.google.ai.edge.gallery.ui.common.SMALL_BUTTON_CONTENT_PADDING
-import com.google.ai.edge.gallery.ui.modelmanager.ModelManagerViewModel
-import com.google.ai.edge.gallery.ui.theme.customColors
+import com.nexvora.ai.R
+import com.nexvora.ai.proto.LlmBenchmarkResult
+import com.nexvora.ai.proto.ValueSeries
+import com.nexvora.ai.ui.common.Accordions
+import com.nexvora.ai.ui.common.MarkdownText
+import com.nexvora.ai.ui.common.SMALL_BUTTON_CONTENT_PADDING
+import com.nexvora.ai.ui.modelmanager.ModelManagerViewModel
+import com.nexvora.ai.ui.theme.customColors
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale

@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.data
+package com.nexvora.ai.data
 
 import android.os.Build
 import android.util.Log
-import com.google.ai.edge.gallery.common.isPixel10
-import com.google.ai.edge.gallery.common.isPixelDevice
+import com.nexvora.ai.common.isPixel10
+import com.nexvora.ai.common.isPixelDevice
 import com.google.gson.annotations.SerializedName
 
 private const val TAG = "AGModelAllowlist"

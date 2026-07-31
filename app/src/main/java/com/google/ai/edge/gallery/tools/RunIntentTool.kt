@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.tools
+package com.nexvora.ai.tools
 
 import android.content.Context
 import android.util.Log
-import com.google.ai.edge.gallery.intents.IntentAction
-import com.google.ai.edge.gallery.intents.IntentHandler
-import com.google.ai.edge.gallery.skills.SkillsProvider
+import com.nexvora.ai.intents.IntentAction
+import com.nexvora.ai.intents.IntentHandler
+import com.nexvora.ai.skills.SkillsProvider
 import com.google.ai.edge.litertlm.Tool
 import com.google.ai.edge.litertlm.ToolParam
 import kotlinx.coroutines.Dispatchers

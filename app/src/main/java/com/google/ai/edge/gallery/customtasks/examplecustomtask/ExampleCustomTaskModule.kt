@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.customtasks.examplecustomtask
+package com.nexvora.ai.customtasks.examplecustomtask
 
-import com.google.ai.edge.gallery.customtasks.common.CustomTask
+import com.nexvora.ai.customtasks.common.CustomTask
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

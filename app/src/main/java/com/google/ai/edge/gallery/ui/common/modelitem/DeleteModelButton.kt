@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.common.modelitem
+package com.nexvora.ai.ui.common.modelitem
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.material.icons.Icons
@@ -31,11 +31,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.res.stringResource
-import com.google.ai.edge.gallery.R
-import com.google.ai.edge.gallery.data.Model
-import com.google.ai.edge.gallery.data.ModelDownloadStatus
-import com.google.ai.edge.gallery.data.ModelDownloadStatusType
-import com.google.ai.edge.gallery.ui.modelmanager.ModelManagerViewModel
+import com.nexvora.ai.R
+import com.nexvora.ai.data.Model
+import com.nexvora.ai.data.ModelDownloadStatus
+import com.nexvora.ai.data.ModelDownloadStatusType
+import com.nexvora.ai.ui.modelmanager.ModelManagerViewModel
 
 /** Composable function to display a button for deleting the downloaded model. */
 @Composable

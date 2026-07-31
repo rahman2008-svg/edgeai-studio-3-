@@ -14,31 +14,31 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.llmchat
+package com.nexvora.ai.ui.llmchat
 
 import android.content.Context
 import android.graphics.Bitmap
 import android.util.Log
 import androidx.datastore.core.DataStore
 import androidx.lifecycle.viewModelScope
-import com.google.ai.edge.gallery.common.SystemPromptHelper
-import com.google.ai.edge.gallery.data.ConfigKeys
-import com.google.ai.edge.gallery.data.Model
-import com.google.ai.edge.gallery.data.SystemPromptRepository
-import com.google.ai.edge.gallery.data.Task
-import com.google.ai.edge.gallery.proto.UserData
-import com.google.ai.edge.gallery.runtime.runtimeHelper
-import com.google.ai.edge.gallery.ui.common.chat.ChatMessageAudioClip
-import com.google.ai.edge.gallery.ui.common.chat.ChatMessageError
-import com.google.ai.edge.gallery.ui.common.chat.ChatMessageInfo
-import com.google.ai.edge.gallery.ui.common.chat.ChatMessageLoading
-import com.google.ai.edge.gallery.ui.common.chat.ChatMessageText
-import com.google.ai.edge.gallery.ui.common.chat.ChatMessageThinking
-import com.google.ai.edge.gallery.ui.common.chat.ChatMessageType
-import com.google.ai.edge.gallery.ui.common.chat.ChatMessageWarning
-import com.google.ai.edge.gallery.ui.common.chat.ChatSide
-import com.google.ai.edge.gallery.ui.common.chat.ChatViewModel
-import com.google.ai.edge.gallery.ui.modelmanager.ModelManagerViewModel
+import com.nexvora.ai.common.SystemPromptHelper
+import com.nexvora.ai.data.ConfigKeys
+import com.nexvora.ai.data.Model
+import com.nexvora.ai.data.SystemPromptRepository
+import com.nexvora.ai.data.Task
+import com.nexvora.ai.proto.UserData
+import com.nexvora.ai.runtime.runtimeHelper
+import com.nexvora.ai.ui.common.chat.ChatMessageAudioClip
+import com.nexvora.ai.ui.common.chat.ChatMessageError
+import com.nexvora.ai.ui.common.chat.ChatMessageInfo
+import com.nexvora.ai.ui.common.chat.ChatMessageLoading
+import com.nexvora.ai.ui.common.chat.ChatMessageText
+import com.nexvora.ai.ui.common.chat.ChatMessageThinking
+import com.nexvora.ai.ui.common.chat.ChatMessageType
+import com.nexvora.ai.ui.common.chat.ChatMessageWarning
+import com.nexvora.ai.ui.common.chat.ChatSide
+import com.nexvora.ai.ui.common.chat.ChatViewModel
+import com.nexvora.ai.ui.modelmanager.ModelManagerViewModel
 import com.google.ai.edge.litertlm.Contents
 import com.google.ai.edge.litertlm.ExperimentalApi
 import com.google.ai.edge.litertlm.Message

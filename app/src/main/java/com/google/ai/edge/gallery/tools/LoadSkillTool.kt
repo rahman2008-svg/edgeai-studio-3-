@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.tools
+package com.nexvora.ai.tools
 
 import android.util.Log
-import com.google.ai.edge.gallery.skills.SkillsProvider
-import com.google.ai.edge.gallery.skills.getSkillContent
+import com.nexvora.ai.skills.SkillsProvider
+import com.nexvora.ai.skills.getSkillContent
 import com.google.ai.edge.litertlm.Tool
 import com.google.ai.edge.litertlm.ToolParam
 import kotlinx.coroutines.Dispatchers

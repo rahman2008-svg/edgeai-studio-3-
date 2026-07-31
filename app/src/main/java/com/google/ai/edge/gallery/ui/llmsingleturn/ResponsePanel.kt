@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.llmsingleturn
+package com.nexvora.ai.ui.llmsingleturn
 
 import android.content.ClipData
 import android.util.Log
@@ -61,14 +61,14 @@ import androidx.compose.ui.semantics.LiveRegionMode
 import androidx.compose.ui.semantics.liveRegion
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
-import com.google.ai.edge.gallery.R
-import com.google.ai.edge.gallery.data.ConfigKeys
-import com.google.ai.edge.gallery.data.Model
-import com.google.ai.edge.gallery.data.Task
-import com.google.ai.edge.gallery.ui.common.BufferedFadingMarkdownText
-import com.google.ai.edge.gallery.ui.common.ScrollToBottomButton
-import com.google.ai.edge.gallery.ui.common.chat.MessageBodyLoading
-import com.google.ai.edge.gallery.ui.modelmanager.ModelManagerViewModel
+import com.nexvora.ai.R
+import com.nexvora.ai.data.ConfigKeys
+import com.nexvora.ai.data.Model
+import com.nexvora.ai.data.Task
+import com.nexvora.ai.ui.common.BufferedFadingMarkdownText
+import com.nexvora.ai.ui.common.ScrollToBottomButton
+import com.nexvora.ai.ui.common.chat.MessageBodyLoading
+import com.nexvora.ai.ui.modelmanager.ModelManagerViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch

@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.common
+package com.nexvora.ai.ui.common
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
-import com.google.ai.edge.gallery.data.Task
-import com.google.ai.edge.gallery.ui.theme.customColors
+import com.nexvora.ai.data.Task
+import com.nexvora.ai.ui.theme.customColors
 
 @Composable
 fun getTaskBgColor(task: Task): Color {

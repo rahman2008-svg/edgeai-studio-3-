@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.llmsingleturn
+package com.nexvora.ai.ui.llmsingleturn
 
 import androidx.annotation.StringRes
 import androidx.compose.ui.graphics.Brush.Companion.linearGradient
@@ -23,7 +23,7 @@ import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.withStyle
-import com.google.ai.edge.gallery.R
+import com.nexvora.ai.R
 
 enum class PromptTemplateInputEditorType {
   SINGLE_SELECT

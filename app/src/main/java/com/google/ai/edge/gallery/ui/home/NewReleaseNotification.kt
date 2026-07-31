@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.home
+package com.nexvora.ai.ui.home
 
 import android.util.Log
 import androidx.compose.animation.AnimatedVisibility
@@ -61,8 +61,8 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.compose.LocalLifecycleOwner
-import com.google.ai.edge.gallery.BuildConfig
-import com.google.ai.edge.gallery.common.getJsonResponse
+import com.nexvora.ai.BuildConfig
+import com.nexvora.ai.common.getJsonResponse
 import kotlin.math.max
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

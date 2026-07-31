@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.notifications
+package com.nexvora.ai.ui.notifications
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -68,10 +68,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.ViewModel
-import com.google.ai.edge.gallery.R
-import com.google.ai.edge.gallery.notifications.NotificationScheduleManager
-import com.google.ai.edge.gallery.proto.ScheduledNotification
-import com.google.ai.edge.gallery.ui.theme.customColors
+import com.nexvora.ai.R
+import com.nexvora.ai.notifications.NotificationScheduleManager
+import com.nexvora.ai.proto.ScheduledNotification
+import com.nexvora.ai.ui.theme.customColors
 import dagger.hilt.android.lifecycle.HiltViewModel
 import java.util.Locale
 import javax.inject.Inject

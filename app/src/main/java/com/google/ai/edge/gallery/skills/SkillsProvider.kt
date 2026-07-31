@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.skills
+package com.nexvora.ai.skills
 
-import com.google.ai.edge.gallery.proto.Skill
+import com.nexvora.ai.proto.Skill
 
 /** Manages skill discovery, querying, and instruction loading. */
 interface SkillsProvider {

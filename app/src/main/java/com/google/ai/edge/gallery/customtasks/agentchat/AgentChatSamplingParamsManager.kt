@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.customtasks.agentchat
+package com.nexvora.ai.customtasks.agentchat
 
-import com.google.ai.edge.gallery.data.ConfigKeys
-import com.google.ai.edge.gallery.data.Model
+import com.nexvora.ai.data.ConfigKeys
+import com.nexvora.ai.data.Model
 import java.util.Collections
 import java.util.concurrent.ConcurrentHashMap
 

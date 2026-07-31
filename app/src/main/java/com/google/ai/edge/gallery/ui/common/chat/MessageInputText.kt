@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.common.chat
+package com.nexvora.ai.ui.common.chat
 
 import android.Manifest
 import android.content.Context
@@ -122,20 +122,20 @@ import androidx.exifinterface.media.ExifInterface
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.compose.LocalLifecycleOwner
-import com.google.ai.edge.gallery.R
-import com.google.ai.edge.gallery.common.AudioClip
-import com.google.ai.edge.gallery.common.convertWavToMonoWithMaxSeconds
-import com.google.ai.edge.gallery.common.decodeSampledBitmapFromUri
-import com.google.ai.edge.gallery.common.rotateBitmap
-import com.google.ai.edge.gallery.data.MAX_AUDIO_CLIP_COUNT
-import com.google.ai.edge.gallery.data.MAX_IMAGE_COUNT
-import com.google.ai.edge.gallery.data.MAX_IMAGE_COUNT_AI_CORE
-import com.google.ai.edge.gallery.data.RuntimeType
-import com.google.ai.edge.gallery.data.SAMPLE_RATE
-import com.google.ai.edge.gallery.data.Task
-import com.google.ai.edge.gallery.ui.common.getTaskIconColor
-import com.google.ai.edge.gallery.ui.modelmanager.ModelManagerViewModel
-import com.google.ai.edge.gallery.ui.theme.bodyLargeNarrow
+import com.nexvora.ai.R
+import com.nexvora.ai.common.AudioClip
+import com.nexvora.ai.common.convertWavToMonoWithMaxSeconds
+import com.nexvora.ai.common.decodeSampledBitmapFromUri
+import com.nexvora.ai.common.rotateBitmap
+import com.nexvora.ai.data.MAX_AUDIO_CLIP_COUNT
+import com.nexvora.ai.data.MAX_IMAGE_COUNT
+import com.nexvora.ai.data.MAX_IMAGE_COUNT_AI_CORE
+import com.nexvora.ai.data.RuntimeType
+import com.nexvora.ai.data.SAMPLE_RATE
+import com.nexvora.ai.data.Task
+import com.nexvora.ai.ui.common.getTaskIconColor
+import com.nexvora.ai.ui.modelmanager.ModelManagerViewModel
+import com.nexvora.ai.ui.theme.bodyLargeNarrow
 import java.io.FileInputStream
 import java.util.concurrent.Executors
 import kotlinx.coroutines.Dispatchers

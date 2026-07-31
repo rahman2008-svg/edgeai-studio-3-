@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.common.modelitem
+package com.nexvora.ai.ui.common.modelitem
 
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
@@ -22,8 +22,8 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
-import com.google.ai.edge.gallery.R
-import com.google.ai.edge.gallery.data.Model
+import com.nexvora.ai.R
+import com.nexvora.ai.data.Model
 
 /** Composable function to display a confirmation dialog for deleting a model. */
 @Composable

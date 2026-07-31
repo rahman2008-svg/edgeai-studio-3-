@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.customtasks.agentchat
+package com.nexvora.ai.customtasks.agentchat
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -63,8 +63,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
-import com.google.ai.edge.gallery.R
-import com.google.ai.edge.gallery.data.AllowedSkill
+import com.nexvora.ai.R
+import com.nexvora.ai.data.AllowedSkill
 import kotlinx.coroutines.launch
 
 /** A ModalBottomSheet Composable for displaying and adding skills from a featured list. */

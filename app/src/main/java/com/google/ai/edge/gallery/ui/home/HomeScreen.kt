@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.home
+package com.nexvora.ai.ui.home
 
 import android.Manifest
 import android.content.Context
@@ -99,15 +99,15 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
-import com.google.ai.edge.gallery.R
-import com.google.ai.edge.gallery.data.BuiltInTaskId
-import com.google.ai.edge.gallery.data.Category
-import com.google.ai.edge.gallery.data.CategoryInfo
-import com.google.ai.edge.gallery.data.Task
-import com.google.ai.edge.gallery.ui.common.TaskIcon
-import com.google.ai.edge.gallery.ui.common.tos.AppTosDialog
-import com.google.ai.edge.gallery.ui.common.tos.TosViewModel
-import com.google.ai.edge.gallery.ui.modelmanager.ModelManagerViewModel
+import com.nexvora.ai.R
+import com.nexvora.ai.data.BuiltInTaskId
+import com.nexvora.ai.data.Category
+import com.nexvora.ai.data.CategoryInfo
+import com.nexvora.ai.data.Task
+import com.nexvora.ai.ui.common.TaskIcon
+import com.nexvora.ai.ui.common.tos.AppTosDialog
+import com.nexvora.ai.ui.common.tos.TosViewModel
+import com.nexvora.ai.ui.modelmanager.ModelManagerViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 

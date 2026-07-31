@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.common.chat
+package com.nexvora.ai.ui.common.chat
 
 // import androidx.compose.ui.tooling.preview.Preview
-// import com.google.ai.edge.gallery.ui.preview.ALL_PREVIEW_TASKS
-// import com.google.ai.edge.gallery.ui.preview.TASK_TEST1
-// import com.google.ai.edge.gallery.ui.theme.GalleryTheme
+// import com.nexvora.ai.ui.preview.ALL_PREVIEW_TASKS
+// import com.nexvora.ai.ui.preview.TASK_TEST1
+// import com.nexvora.ai.ui.theme.GalleryTheme
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -46,9 +46,9 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.google.ai.edge.gallery.data.PromptTemplate
-import com.google.ai.edge.gallery.data.Task
-import com.google.ai.edge.gallery.ui.common.getTaskIconColor
+import com.nexvora.ai.data.PromptTemplate
+import com.nexvora.ai.data.Task
+import com.nexvora.ai.ui.common.getTaskIconColor
 
 private const val CARD_HEIGHT = 100
 

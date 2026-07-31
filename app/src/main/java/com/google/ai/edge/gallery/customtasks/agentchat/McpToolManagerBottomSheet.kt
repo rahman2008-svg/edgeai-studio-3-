@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.customtasks.agentchat
+package com.nexvora.ai.customtasks.agentchat
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -61,10 +61,10 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.google.ai.edge.gallery.R
-import com.google.ai.edge.gallery.proto.McpTool
-import com.google.ai.edge.gallery.ui.common.SmallFilledTonalButton
-import com.google.ai.edge.gallery.ui.common.SmallOutlinedButton
+import com.nexvora.ai.R
+import com.nexvora.ai.proto.McpTool
+import com.nexvora.ai.ui.common.SmallFilledTonalButton
+import com.nexvora.ai.ui.common.SmallOutlinedButton
 import kotlinx.coroutines.launch
 import org.json.JSONObject
 

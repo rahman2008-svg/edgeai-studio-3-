@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.runtime.aicore
+package com.nexvora.ai.runtime.aicore
 
 import android.content.Context
 import android.graphics.Bitmap
 import android.util.Log
-import com.google.ai.edge.gallery.common.cleanUpMediapipeTaskErrorMessage
-import com.google.ai.edge.gallery.data.AICoreModelPreference
-import com.google.ai.edge.gallery.data.AICoreModelReleaseStage
-import com.google.ai.edge.gallery.data.ConfigKeys
-import com.google.ai.edge.gallery.data.DEFAULT_MAX_OUTPUT_TOKEN
-import com.google.ai.edge.gallery.data.DEFAULT_TEMPERATURE
-import com.google.ai.edge.gallery.data.DEFAULT_TOPK
-import com.google.ai.edge.gallery.data.Model
-import com.google.ai.edge.gallery.runtime.CleanUpListener
-import com.google.ai.edge.gallery.runtime.LlmModelHelper
-import com.google.ai.edge.gallery.runtime.ResultListener
+import com.nexvora.ai.common.cleanUpMediapipeTaskErrorMessage
+import com.nexvora.ai.data.AICoreModelPreference
+import com.nexvora.ai.data.AICoreModelReleaseStage
+import com.nexvora.ai.data.ConfigKeys
+import com.nexvora.ai.data.DEFAULT_MAX_OUTPUT_TOKEN
+import com.nexvora.ai.data.DEFAULT_TEMPERATURE
+import com.nexvora.ai.data.DEFAULT_TOPK
+import com.nexvora.ai.data.Model
+import com.nexvora.ai.runtime.CleanUpListener
+import com.nexvora.ai.runtime.LlmModelHelper
+import com.nexvora.ai.runtime.ResultListener
 import com.google.ai.edge.litertlm.Contents
 import com.google.ai.edge.litertlm.Message
 import com.google.ai.edge.litertlm.Role
@@ -399,9 +399,9 @@ object AICoreModelHelper : LlmModelHelper {
 
     val allowedPackages =
       setOf(
-        "com.google.ai.edge.gallery",
-        "com.google.ai.edge.gallery.internal",
-        "com.google.ai.edge.gallery.dev",
+        "com.nexvora.ai",
+        "com.nexvora.ai.internal",
+        "com.nexvora.ai.dev",
       )
     val packageName = context.packageName
     if (!allowedPackages.contains(packageName)) {

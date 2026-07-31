@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.skills
+package com.nexvora.ai.skills
 
 import android.content.Context
 import android.net.Uri
@@ -22,13 +22,13 @@ import android.os.Bundle
 import android.provider.OpenableColumns
 import android.util.Log
 import androidx.documentfile.provider.DocumentFile
-import com.google.ai.edge.gallery.GalleryEvent
-import com.google.ai.edge.gallery.common.getJsonResponse
-import com.google.ai.edge.gallery.data.AllowedSkill
-import com.google.ai.edge.gallery.data.DataStoreRepository
-import com.google.ai.edge.gallery.data.SkillAllowlist
-import com.google.ai.edge.gallery.firebaseAnalytics
-import com.google.ai.edge.gallery.proto.Skill
+import com.nexvora.ai.GalleryEvent
+import com.nexvora.ai.common.getJsonResponse
+import com.nexvora.ai.data.AllowedSkill
+import com.nexvora.ai.data.DataStoreRepository
+import com.nexvora.ai.data.SkillAllowlist
+import com.nexvora.ai.firebaseAnalytics
+import com.nexvora.ai.proto.Skill
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.io.File
 import java.io.FileNotFoundException

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.customtasks.agentchat
+package com.nexvora.ai.customtasks.agentchat
 
 import android.os.Bundle
 import android.util.Log
@@ -63,10 +63,10 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
-import com.google.ai.edge.gallery.GalleryEvent
-import com.google.ai.edge.gallery.R
-import com.google.ai.edge.gallery.firebaseAnalytics
-import com.google.ai.edge.gallery.proto.McpAuth
+import com.nexvora.ai.GalleryEvent
+import com.nexvora.ai.R
+import com.nexvora.ai.firebaseAnalytics
+import com.nexvora.ai.proto.McpAuth
 import java.net.URI
 
 private const val TAG = "AGAddMcpServerDialog"

@@ -1,4 +1,4 @@
-package com.google.ai.edge.gallery.ui.nexora
+package com.nexvora.ai.ui.nexora
 
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.RepeatMode
@@ -48,7 +48,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.google.ai.edge.gallery.ui.theme.customColors
+import com.nexvora.ai.ui.theme.customColors
 
 /**
  * Reusable Glassmorphism Card with gradient borders and rounded corners.

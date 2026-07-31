@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery
+package com.nexvora.ai
 
 import android.app.Application
-import com.google.ai.edge.gallery.data.DataStoreRepository
-import com.google.ai.edge.gallery.notifications.NotificationScheduleManager
-import com.google.ai.edge.gallery.ui.theme.ThemeSettings
+import com.nexvora.ai.data.DataStoreRepository
+import com.nexvora.ai.notifications.NotificationScheduleManager
+import com.nexvora.ai.ui.theme.ThemeSettings
 import com.google.firebase.FirebaseApp
 import dagger.hilt.android.HiltAndroidApp
 import javax.inject.Inject

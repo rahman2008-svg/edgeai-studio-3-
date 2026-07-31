@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.customtasks.agentchat
+package com.nexvora.ai.customtasks.agentchat
 
 import android.os.Bundle
 import androidx.annotation.StringRes
@@ -105,17 +105,17 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
-import com.google.ai.edge.gallery.GalleryEvent
-import com.google.ai.edge.gallery.R
-import com.google.ai.edge.gallery.common.clearFocusOnKeyboardDismiss
-import com.google.ai.edge.gallery.data.AgentSkillsURLs
-import com.google.ai.edge.gallery.data.MAX_RECOMMENDED_SKILL_COUNT
-import com.google.ai.edge.gallery.firebaseAnalytics
-import com.google.ai.edge.gallery.proto.Skill
-import com.google.ai.edge.gallery.tools.getSkillSecretKey
-import com.google.ai.edge.gallery.ui.common.FloatingBanner
-import com.google.ai.edge.gallery.ui.common.GalleryWebView
-import com.google.ai.edge.gallery.ui.theme.customColors
+import com.nexvora.ai.GalleryEvent
+import com.nexvora.ai.R
+import com.nexvora.ai.common.clearFocusOnKeyboardDismiss
+import com.nexvora.ai.data.AgentSkillsURLs
+import com.nexvora.ai.data.MAX_RECOMMENDED_SKILL_COUNT
+import com.nexvora.ai.firebaseAnalytics
+import com.nexvora.ai.proto.Skill
+import com.nexvora.ai.tools.getSkillSecretKey
+import com.nexvora.ai.ui.common.FloatingBanner
+import com.nexvora.ai.ui.common.GalleryWebView
+import com.nexvora.ai.ui.theme.customColors
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.customtasks.common
+package com.nexvora.ai.customtasks.common
 
 import android.content.Context
 import android.hardware.Sensor

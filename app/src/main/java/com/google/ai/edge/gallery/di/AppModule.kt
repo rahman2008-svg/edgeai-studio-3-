@@ -14,30 +14,30 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.di
+package com.nexvora.ai.di
 
 import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.core.DataStoreFactory
 import androidx.datastore.core.Serializer
 import androidx.datastore.dataStoreFile
-import com.google.ai.edge.gallery.AppLifecycleProvider
-import com.google.ai.edge.gallery.BenchmarkResultsSerializer
-import com.google.ai.edge.gallery.BuildConfig
-import com.google.ai.edge.gallery.CutoutsSerializer
-import com.google.ai.edge.gallery.GalleryLifecycleProvider
-import com.google.ai.edge.gallery.SettingsSerializer
-import com.google.ai.edge.gallery.SkillsSerializer
-import com.google.ai.edge.gallery.UserDataSerializer
-import com.google.ai.edge.gallery.data.DataStoreRepository
-import com.google.ai.edge.gallery.data.DefaultDataStoreRepository
-import com.google.ai.edge.gallery.data.DefaultDownloadRepository
-import com.google.ai.edge.gallery.data.DownloadRepository
-import com.google.ai.edge.gallery.proto.BenchmarkResults
-import com.google.ai.edge.gallery.proto.CutoutCollection
-import com.google.ai.edge.gallery.proto.Settings
-import com.google.ai.edge.gallery.proto.Skills
-import com.google.ai.edge.gallery.proto.UserData
+import com.nexvora.ai.AppLifecycleProvider
+import com.nexvora.ai.BenchmarkResultsSerializer
+import com.nexvora.ai.BuildConfig
+import com.nexvora.ai.CutoutsSerializer
+import com.nexvora.ai.GalleryLifecycleProvider
+import com.nexvora.ai.SettingsSerializer
+import com.nexvora.ai.SkillsSerializer
+import com.nexvora.ai.UserDataSerializer
+import com.nexvora.ai.data.DataStoreRepository
+import com.nexvora.ai.data.DefaultDataStoreRepository
+import com.nexvora.ai.data.DefaultDownloadRepository
+import com.nexvora.ai.data.DownloadRepository
+import com.nexvora.ai.proto.BenchmarkResults
+import com.nexvora.ai.proto.CutoutCollection
+import com.nexvora.ai.proto.Settings
+import com.nexvora.ai.proto.Skills
+import com.nexvora.ai.proto.UserData
 import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides

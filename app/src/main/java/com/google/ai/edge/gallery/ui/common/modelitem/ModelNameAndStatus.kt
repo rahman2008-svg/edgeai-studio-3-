@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.common.modelitem
+package com.nexvora.ai.ui.common.modelitem
 
 import androidx.compose.animation.ExperimentalSharedTransitionApi
 import androidx.compose.foundation.clickable
@@ -46,17 +46,17 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.google.ai.edge.gallery.R
-import com.google.ai.edge.gallery.data.MODEL_INFO_ICON_SIZE
-import com.google.ai.edge.gallery.data.Model
-import com.google.ai.edge.gallery.data.ModelDownloadStatus
-import com.google.ai.edge.gallery.data.ModelDownloadStatusType
-import com.google.ai.edge.gallery.data.RuntimeType
-import com.google.ai.edge.gallery.data.Task
-import com.google.ai.edge.gallery.ui.common.ClickableLink
-import com.google.ai.edge.gallery.ui.common.humanReadableSize
-import com.google.ai.edge.gallery.ui.theme.customColors
-import com.google.ai.edge.gallery.ui.theme.labelSmallNarrow
+import com.nexvora.ai.R
+import com.nexvora.ai.data.MODEL_INFO_ICON_SIZE
+import com.nexvora.ai.data.Model
+import com.nexvora.ai.data.ModelDownloadStatus
+import com.nexvora.ai.data.ModelDownloadStatusType
+import com.nexvora.ai.data.RuntimeType
+import com.nexvora.ai.data.Task
+import com.nexvora.ai.ui.common.ClickableLink
+import com.nexvora.ai.ui.common.humanReadableSize
+import com.nexvora.ai.ui.theme.customColors
+import com.nexvora.ai.ui.theme.labelSmallNarrow
 
 /**
  * Composable function to display the model name and its download status information.

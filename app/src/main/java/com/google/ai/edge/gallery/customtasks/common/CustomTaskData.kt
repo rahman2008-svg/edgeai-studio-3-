@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.customtasks.common
+package com.nexvora.ai.customtasks.common
 
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.google.ai.edge.gallery.ui.modelmanager.ModelManagerViewModel
+import com.nexvora.ai.ui.modelmanager.ModelManagerViewModel
 
 /**
  * Data class to hold information passed to the `MainScreen` composable of a custom task.

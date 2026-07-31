@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.common.chat
+package com.nexvora.ai.ui.common.chat
 
-// import com.google.ai.edge.gallery.ui.preview.PreviewChatModel
-// import com.google.ai.edge.gallery.ui.preview.PreviewModelManagerViewModel
-// import com.google.ai.edge.gallery.ui.preview.TASK_TEST1
-// import com.google.ai.edge.gallery.ui.theme.GalleryTheme
+// import com.nexvora.ai.ui.preview.PreviewChatModel
+// import com.nexvora.ai.ui.preview.PreviewModelManagerViewModel
+// import com.nexvora.ai.ui.preview.TASK_TEST1
+// import com.nexvora.ai.ui.theme.GalleryTheme
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -79,20 +79,20 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
-import com.google.ai.edge.gallery.GalleryEvent
-import com.google.ai.edge.gallery.R
-import com.google.ai.edge.gallery.data.BuiltInTaskId
-import com.google.ai.edge.gallery.data.ConfigKeys
-import com.google.ai.edge.gallery.data.Model
-import com.google.ai.edge.gallery.data.ModelDownloadStatusType
-import com.google.ai.edge.gallery.data.Task
-import com.google.ai.edge.gallery.firebaseAnalytics
-import com.google.ai.edge.gallery.ui.common.ModelPageAppBar
-import com.google.ai.edge.gallery.ui.common.copyBitmapToClipboard
-import com.google.ai.edge.gallery.ui.common.saveBitmapToMediaStore
-import com.google.ai.edge.gallery.ui.common.shareBitmap
-import com.google.ai.edge.gallery.ui.modelmanager.ModelInitializationStatusType
-import com.google.ai.edge.gallery.ui.modelmanager.ModelManagerViewModel
+import com.nexvora.ai.GalleryEvent
+import com.nexvora.ai.R
+import com.nexvora.ai.data.BuiltInTaskId
+import com.nexvora.ai.data.ConfigKeys
+import com.nexvora.ai.data.Model
+import com.nexvora.ai.data.ModelDownloadStatusType
+import com.nexvora.ai.data.Task
+import com.nexvora.ai.firebaseAnalytics
+import com.nexvora.ai.ui.common.ModelPageAppBar
+import com.nexvora.ai.ui.common.copyBitmapToClipboard
+import com.nexvora.ai.ui.common.saveBitmapToMediaStore
+import com.nexvora.ai.ui.common.shareBitmap
+import com.nexvora.ai.ui.modelmanager.ModelInitializationStatusType
+import com.nexvora.ai.ui.modelmanager.ModelManagerViewModel
 import java.io.File
 import java.util.UUID
 import kotlinx.coroutines.Dispatchers
@@ -616,21 +616,21 @@ private fun buildFirstMessageWithHistory(
 }
 
 /**
- * Deserializes a list of [com.google.ai.edge.gallery.proto.ChatMessageProto] from persistent
+ * Deserializes a list of [com.nexvora.ai.proto.ChatMessageProto] from persistent
  * storage into the corresponding [ChatMessage] UI models.
  *
  * @param protoMessages The list of saved protobuf messages.
  * @return The list of restored UI/domain message objects.
  */
 private fun deserializeProtoMessages(
-  protoMessages: List<com.google.ai.edge.gallery.proto.ChatMessageProto>
+  protoMessages: List<com.nexvora.ai.proto.ChatMessageProto>
 ): List<ChatMessage> {
   return protoMessages.mapNotNull { protoMsg ->
     val side =
       when (protoMsg.side) {
-        com.google.ai.edge.gallery.proto.ChatSideProto.CHAT_SIDE_USER -> ChatSide.USER
-        com.google.ai.edge.gallery.proto.ChatSideProto.CHAT_SIDE_MODEL -> ChatSide.AGENT
-        com.google.ai.edge.gallery.proto.ChatSideProto.CHAT_SIDE_SYSTEM -> ChatSide.SYSTEM
+        com.nexvora.ai.proto.ChatSideProto.CHAT_SIDE_USER -> ChatSide.USER
+        com.nexvora.ai.proto.ChatSideProto.CHAT_SIDE_MODEL -> ChatSide.AGENT
+        com.nexvora.ai.proto.ChatSideProto.CHAT_SIDE_SYSTEM -> ChatSide.SYSTEM
         else -> ChatSide.SYSTEM
       }
 

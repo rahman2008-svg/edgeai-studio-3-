@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.customtasks.examplecustomtask
+package com.nexvora.ai.customtasks.examplecustomtask
 
 import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.ViewModel

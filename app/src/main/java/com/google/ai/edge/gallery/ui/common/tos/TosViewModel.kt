@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.common.tos
+package com.nexvora.ai.ui.common.tos
 
 import androidx.lifecycle.ViewModel
-import com.google.ai.edge.gallery.data.DataStoreRepository
+import com.nexvora.ai.data.DataStoreRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

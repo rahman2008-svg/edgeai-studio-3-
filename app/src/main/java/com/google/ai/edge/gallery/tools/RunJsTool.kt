@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.tools
+package com.nexvora.ai.tools
 
 import android.util.Log
-import com.google.ai.edge.gallery.common.LOCAL_URL_BASE
-import com.google.ai.edge.gallery.data.DataStoreRepository
-import com.google.ai.edge.gallery.skills.SkillsProvider
-import com.google.ai.edge.gallery.skills.getJsSkillUrl
-import com.google.ai.edge.gallery.skills.getJsSkillWebviewUrl
+import com.nexvora.ai.common.LOCAL_URL_BASE
+import com.nexvora.ai.data.DataStoreRepository
+import com.nexvora.ai.skills.SkillsProvider
+import com.nexvora.ai.skills.getJsSkillUrl
+import com.nexvora.ai.skills.getJsSkillWebviewUrl
 import com.google.ai.edge.litertlm.Tool
 import com.google.ai.edge.litertlm.ToolParam
 import com.squareup.moshi.JsonAdapter

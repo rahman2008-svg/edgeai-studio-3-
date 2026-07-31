@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.theme
+package com.nexvora.ai.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

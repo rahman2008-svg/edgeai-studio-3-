@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.runtime
+package com.nexvora.ai.runtime
 
-import com.google.ai.edge.gallery.data.Model
-import com.google.ai.edge.gallery.data.RuntimeType
-import com.google.ai.edge.gallery.runtime.aicore.AICoreModelHelper
-import com.google.ai.edge.gallery.ui.llmchat.LlmChatModelHelper
+import com.nexvora.ai.data.Model
+import com.nexvora.ai.data.RuntimeType
+import com.nexvora.ai.runtime.aicore.AICoreModelHelper
+import com.nexvora.ai.ui.llmchat.LlmChatModelHelper
 
 var testingModelHelper: LlmModelHelper? = null
 

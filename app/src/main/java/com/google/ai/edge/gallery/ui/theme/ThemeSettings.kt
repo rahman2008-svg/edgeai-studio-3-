@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.theme
+package com.nexvora.ai.ui.theme
 
 import androidx.compose.runtime.mutableStateOf
-import com.google.ai.edge.gallery.proto.Theme
+import com.nexvora.ai.proto.Theme
 
 object ThemeSettings {
   val themeOverride = mutableStateOf<Theme>(Theme.THEME_AUTO)

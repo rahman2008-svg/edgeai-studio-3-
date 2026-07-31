@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.customtasks.agentchat
+package com.nexvora.ai.customtasks.agentchat
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -30,14 +30,14 @@ import androidx.compose.material.icons.outlined.QrCode
 import androidx.compose.material.icons.outlined.SentimentVerySatisfied
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.google.ai.edge.gallery.R
-import com.google.ai.edge.gallery.common.SkillTryOutChip
-import com.google.ai.edge.gallery.data.AllowedSkill
-import com.google.ai.edge.gallery.data.DataStoreRepository
-import com.google.ai.edge.gallery.proto.Skill
-import com.google.ai.edge.gallery.skills.SkillManager
-import com.google.ai.edge.gallery.skills.getJsSkillUrl
-import com.google.ai.edge.gallery.skills.getJsSkillWebviewUrl
+import com.nexvora.ai.R
+import com.nexvora.ai.common.SkillTryOutChip
+import com.nexvora.ai.data.AllowedSkill
+import com.nexvora.ai.data.DataStoreRepository
+import com.nexvora.ai.proto.Skill
+import com.nexvora.ai.skills.SkillManager
+import com.nexvora.ai.skills.getJsSkillUrl
+import com.nexvora.ai.skills.getJsSkillWebviewUrl
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlin.io.encoding.Base64

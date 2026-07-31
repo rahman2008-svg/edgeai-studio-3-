@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.modelmanager
+package com.nexvora.ai.ui.modelmanager
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -51,8 +51,8 @@ import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.google.ai.edge.gallery.R
-import com.google.ai.edge.gallery.ui.theme.customColors
+import com.nexvora.ai.R
+import com.nexvora.ai.ui.theme.customColors
 
 private val BUTTON_PADDING = PaddingValues(start = 8.dp, top = 0.dp, end = 8.dp, bottom = 0.dp)
 

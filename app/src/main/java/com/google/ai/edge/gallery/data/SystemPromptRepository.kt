@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.data
+package com.nexvora.ai.data
 
 import androidx.datastore.core.DataStore
-import com.google.ai.edge.gallery.proto.UserData
+import com.nexvora.ai.proto.UserData
 import javax.inject.Inject
 import javax.inject.Singleton
 import kotlinx.coroutines.flow.Flow

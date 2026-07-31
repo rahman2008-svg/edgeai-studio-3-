@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.skills
+package com.nexvora.ai.skills
 
-import com.google.ai.edge.gallery.common.LOCAL_URL_BASE
-import com.google.ai.edge.gallery.proto.Skill
+import com.nexvora.ai.common.LOCAL_URL_BASE
+import com.nexvora.ai.proto.Skill
 
 const val SKILL_INSTRUCTIONS_TEMPLATE = "---\nname: %s\ndescription: %s\n---\n\n%s"
 

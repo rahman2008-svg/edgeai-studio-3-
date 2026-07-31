@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.navigation
+package com.nexvora.ai.ui.navigation
 
 import android.net.Uri
 import android.os.Bundle
@@ -70,24 +70,24 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import com.google.ai.edge.gallery.GalleryEvent
-import com.google.ai.edge.gallery.customtasks.common.CustomTaskData
-import com.google.ai.edge.gallery.customtasks.common.CustomTaskDataForBuiltinTask
-import com.google.ai.edge.gallery.data.ModelDownloadStatusType
-import com.google.ai.edge.gallery.data.Task
-import com.google.ai.edge.gallery.data.isLegacyTasks
-import com.google.ai.edge.gallery.firebaseAnalytics
-import com.google.ai.edge.gallery.ui.benchmark.BenchmarkScreen
-import com.google.ai.edge.gallery.ui.common.ErrorDialog
-import com.google.ai.edge.gallery.ui.common.ModelPageAppBar
-import com.google.ai.edge.gallery.ui.common.chat.ModelDownloadStatusInfoPanel
-import com.google.ai.edge.gallery.ui.home.HomeScreen
-import com.google.ai.edge.gallery.ui.home.PromoScreenGm4
-import com.google.ai.edge.gallery.ui.modelmanager.GlobalModelManager
-import com.google.ai.edge.gallery.ui.modelmanager.ModelInitializationStatusType
-import com.google.ai.edge.gallery.ui.modelmanager.ModelManager
-import com.google.ai.edge.gallery.ui.modelmanager.ModelManagerViewModel
-import com.google.ai.edge.gallery.ui.notifications.NotificationsScreen
+import com.nexvora.ai.GalleryEvent
+import com.nexvora.ai.customtasks.common.CustomTaskData
+import com.nexvora.ai.customtasks.common.CustomTaskDataForBuiltinTask
+import com.nexvora.ai.data.ModelDownloadStatusType
+import com.nexvora.ai.data.Task
+import com.nexvora.ai.data.isLegacyTasks
+import com.nexvora.ai.firebaseAnalytics
+import com.nexvora.ai.ui.benchmark.BenchmarkScreen
+import com.nexvora.ai.ui.common.ErrorDialog
+import com.nexvora.ai.ui.common.ModelPageAppBar
+import com.nexvora.ai.ui.common.chat.ModelDownloadStatusInfoPanel
+import com.nexvora.ai.ui.home.HomeScreen
+import com.nexvora.ai.ui.home.PromoScreenGm4
+import com.nexvora.ai.ui.modelmanager.GlobalModelManager
+import com.nexvora.ai.ui.modelmanager.ModelInitializationStatusType
+import com.nexvora.ai.ui.modelmanager.ModelManager
+import com.nexvora.ai.ui.modelmanager.ModelManagerViewModel
+import com.nexvora.ai.ui.notifications.NotificationsScreen
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -462,8 +462,8 @@ fun GalleryNavHost(
     intent.data = null
     val uriStr = data.toString()
     Log.d(TAG, "navigation link clicked: $data")
-    // 1. Precise model deep links: com.google.ai.edge.gallery://model/<taskId>/<modelName>
-    if (uriStr.startsWith("com.google.ai.edge.gallery://model/")) {
+    // 1. Precise model deep links: com.nexvora.ai://model/<taskId>/<modelName>
+    if (uriStr.startsWith("com.nexvora.ai://model/")) {
       if (data.pathSegments.size >= 2) {
         val taskId = data.pathSegments.get(data.pathSegments.size - 2)
         val modelName = data.pathSegments.last()
@@ -480,10 +480,10 @@ fun GalleryNavHost(
       } else {
         Log.e(TAG, "Malformed deep link URI received: $data")
       }
-    } else if (uriStr == "com.google.ai.edge.gallery://global_model_manager") {
+    } else if (uriStr == "com.nexvora.ai://global_model_manager") {
       navController.navigate(ROUTE_MODEL_MANAGER)
     } else {
-      // 2. Dynamic task-level deep links: com.google.ai.edge.gallery://<taskId>
+      // 2. Dynamic task-level deep links: com.nexvora.ai://<taskId>
       val host = data.host
       if (host != null) {
         val queryStr = data.getQueryParameter("query")

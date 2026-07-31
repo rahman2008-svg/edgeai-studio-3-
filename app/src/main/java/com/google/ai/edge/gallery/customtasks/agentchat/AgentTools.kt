@@ -14,20 +14,20 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.customtasks.agentchat
+package com.nexvora.ai.customtasks.agentchat
 
 import android.content.Context
-import com.google.ai.edge.gallery.data.DataStoreRepository
-import com.google.ai.edge.gallery.skills.SkillsProvider
-import com.google.ai.edge.gallery.tools.CallJsSkillResultImage
-import com.google.ai.edge.gallery.tools.CallJsSkillResultWebview
-import com.google.ai.edge.gallery.tools.LoadSkillTool
-import com.google.ai.edge.gallery.tools.RunIntentTool
-import com.google.ai.edge.gallery.tools.RunJsTool
-import com.google.ai.edge.gallery.tools.RunMcpTool
-import com.google.ai.edge.gallery.tools.ToolAction
-import com.google.ai.edge.gallery.tools.ToolDefinition
-import com.google.ai.edge.gallery.tools.ToolsProvider
+import com.nexvora.ai.data.DataStoreRepository
+import com.nexvora.ai.skills.SkillsProvider
+import com.nexvora.ai.tools.CallJsSkillResultImage
+import com.nexvora.ai.tools.CallJsSkillResultWebview
+import com.nexvora.ai.tools.LoadSkillTool
+import com.nexvora.ai.tools.RunIntentTool
+import com.nexvora.ai.tools.RunJsTool
+import com.nexvora.ai.tools.RunMcpTool
+import com.nexvora.ai.tools.ToolAction
+import com.nexvora.ai.tools.ToolDefinition
+import com.nexvora.ai.tools.ToolsProvider
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.channels.ReceiveChannel

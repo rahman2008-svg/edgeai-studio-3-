@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.ai.edge.gallery.notifications
+package com.nexvora.ai.notifications
 
 import android.app.NotificationChannel
 import android.app.NotificationManager

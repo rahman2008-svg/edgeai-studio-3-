@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.theme
+package com.nexvora.ai.ui.theme
 
 import android.app.Activity
 import android.os.Build
@@ -34,7 +34,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
-import com.google.ai.edge.gallery.proto.Theme
+import com.nexvora.ai.proto.Theme
 
 private val lightScheme =
   lightColorScheme(

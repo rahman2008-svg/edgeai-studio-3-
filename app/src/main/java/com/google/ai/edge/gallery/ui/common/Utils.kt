@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.ai.edge.gallery.ui.common
+package com.nexvora.ai.ui.common
 
 import android.Manifest
 import android.content.ClipData
@@ -59,9 +59,9 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
-import com.google.ai.edge.gallery.data.Model
-import com.google.ai.edge.gallery.data.Task
-import com.google.ai.edge.gallery.ui.modelmanager.ModelManagerViewModel
+import com.nexvora.ai.data.Model
+import com.nexvora.ai.data.Task
+import com.nexvora.ai.ui.modelmanager.ModelManagerViewModel
 import java.io.File
 import java.io.FileOutputStream
 import kotlin.math.ln
@@ -170,7 +170,7 @@ fun Context.createTempPictureUri(
 
   return FileProvider.getUriForFile(
     applicationContext,
-    "com.google.ai.edge.gallery.provider" /* {applicationId}.provider */,
+    "com.nexvora.ai.provider" /* {applicationId}.provider */,
     tempFile,
   )
 }

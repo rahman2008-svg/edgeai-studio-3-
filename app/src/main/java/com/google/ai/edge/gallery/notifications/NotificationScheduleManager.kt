@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.ai.edge.gallery.notifications
+package com.nexvora.ai.notifications
 
 import android.app.AlarmManager
 import android.content.Context
@@ -22,8 +22,8 @@ import androidx.datastore.core.CorruptionException
 import androidx.datastore.core.DataStore
 import androidx.datastore.core.DataStoreFactory
 import androidx.datastore.core.Serializer
-import com.google.ai.edge.gallery.proto.ScheduledNotification
-import com.google.ai.edge.gallery.proto.ScheduledNotifications
+import com.nexvora.ai.proto.ScheduledNotification
+import com.nexvora.ai.proto.ScheduledNotifications
 import com.google.protobuf.InvalidProtocolBufferException
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.io.File

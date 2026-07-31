@@ -13,22 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.ai.edge.gallery.ui.benchmark
+package com.nexvora.ai.ui.benchmark
 
 import android.content.Context
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.google.ai.edge.gallery.BuildConfig
-import com.google.ai.edge.gallery.data.DataStoreRepository
-import com.google.ai.edge.gallery.data.Model
-import com.google.ai.edge.gallery.data.RuntimeType
-import com.google.ai.edge.gallery.proto.BenchmarkResult
-import com.google.ai.edge.gallery.proto.LlmBenchmarkBasicInfo
-import com.google.ai.edge.gallery.proto.LlmBenchmarkResult
-import com.google.ai.edge.gallery.proto.LlmBenchmarkStats
-import com.google.ai.edge.gallery.proto.ValueSeries
-import com.google.ai.edge.gallery.runtime.runtimeHelper
+import com.nexvora.ai.BuildConfig
+import com.nexvora.ai.data.DataStoreRepository
+import com.nexvora.ai.data.Model
+import com.nexvora.ai.data.RuntimeType
+import com.nexvora.ai.proto.BenchmarkResult
+import com.nexvora.ai.proto.LlmBenchmarkBasicInfo
+import com.nexvora.ai.proto.LlmBenchmarkResult
+import com.nexvora.ai.proto.LlmBenchmarkStats
+import com.nexvora.ai.proto.ValueSeries
+import com.nexvora.ai.runtime.runtimeHelper
 import com.google.ai.edge.litertlm.Backend
 import com.google.ai.edge.litertlm.ExperimentalApi
 import com.google.ai.edge.litertlm.benchmark
