@@ -17,6 +17,6 @@
 
 
 <resources>
-    <dimen name="model_selector_height">54dp</dimen>
-    <dimen name="chat_bubble_corner_radius">24dp</dimen>
+    <dimen name="model_selector_height">56dp</dimen>
+    <dimen name="chat_bubble_corner_radius">20dp</dimen>
 </resources>
